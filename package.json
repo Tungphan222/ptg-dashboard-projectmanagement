@@ -1,0 +1,9 @@
+{
+  "name": "notion-dashboard",
+  "version": "1.0.0",
+  "description": "Notion Workload Dashboard — GitHub Pages",
+  "private": true,
+  "dependencies": {
+    "@notionhq/client": "^2.2.15"
+  }
+}
