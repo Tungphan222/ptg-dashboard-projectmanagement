@@ -35,6 +35,7 @@ function mapPage(page) {
     date_start: p["Date"]?.date?.start ?? null,
     date_end:   p["Date"]?.date?.end   ?? null,
     done:       p["Checkbox"]?.checkbox ?? false,
+    status: p["Status"]?.select?.name ?? null,
     url:        page.url,
   };
 }
