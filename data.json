@@ -1,6 +1,6 @@
 {
-  "synced_at": "2026-03-23T10:54:37.661Z",
-  "count": 126,
+  "synced_at": "2026-03-23T10:57:59.946Z",
+  "count": 127,
   "fields": {
     "title": "Tên",
     "status": "Status",
@@ -1238,6 +1238,16 @@
       "priority": "",
       "assignee": "VNG",
       "deadline": "2026-03-06",
+      "tags": ""
+    },
+    {
+      "id": "32cd7cf4-b54b-812f-b893-d1e8a5a5af53",
+      "url": "https://www.notion.so/Xin-nh-c-Dragon-Village-32cd7cf4b54b812fb893d1e8a5a5af53",
+      "title": "Xin nhạc Dragon Village",
+      "status": "To Do",
+      "priority": "",
+      "assignee": "Lisa",
+      "deadline": "2026-03-24",
       "tags": ""
     },
     {
