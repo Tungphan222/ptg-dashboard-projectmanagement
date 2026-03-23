@@ -4,72 +4,80 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Workload Dashboard</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#0B0E13;--bg2:#12161D;--bg3:#1A1F2A;--bg4:#232938;
-  --tx:#E8ECF2;--tx2:#9AA3B4;--tx3:#5E6878;
-  --bd:#2A3142;--bd2:#353E52;
-  --acc:#3ECFB4;--acc2:#2BA48E;--acc-bg:rgba(62,207,180,.08);
-  --blue:#4A9EF5;--blue-bg:rgba(74,158,245,.1);
-  --amber:#F5A623;--amber-bg:rgba(245,166,35,.1);
-  --red:#F5574E;--red-bg:rgba(245,87,78,.1);
-  --green:#3ECF8E;--green-bg:rgba(62,207,142,.1);
-  --purple:#A78BFA;--purple-bg:rgba(167,139,250,.1);
-  --cyan:#22d3ee;--cyan-bg:rgba(34,211,238,.1);
-  --orange:#FF6B35;--orange-bg:rgba(255,107,53,.1);
+  /* Palette kem nhạt */
+  --bg:#F5F0E8;--bg2:#FDFAF4;--bg3:#EDE8DF;--bg4:#E4DDD2;
+  --tx:#2C2416;--tx2:#6B5E4A;--tx3:#9E8E77;
+  --bd:#DDD6CB;--bd2:#C9BFB1;
+  /* Accent xanh rêu */
+  --acc:#3C7363;--acc2:#2D5A4D;--acc-bg:rgba(60,115,99,.08);
+  /* Semantic — giữ rõ ràng trên nền sáng */
+  --blue:#2563B0;--blue-bg:rgba(37,99,176,.08);
+  --amber:#B45309;--amber-bg:rgba(180,83,9,.08);
+  --red:#C0392B;--red-bg:rgba(192,57,43,.08);
+  --green:#3C7363;--green-bg:rgba(60,115,99,.1);
+  --purple:#6D3FA0;--purple-bg:rgba(109,63,160,.08);
+  --cyan:#0E7490;--cyan-bg:rgba(14,116,144,.08);
+  --orange:#C2540A;--orange-bg:rgba(194,84,10,.08);
   --r:8px;--rl:12px;
-  --f:'DM Sans',system-ui,sans-serif;--m:'JetBrains Mono',monospace;
-  --sb:236px
+  --f:'DM Sans',system-ui,sans-serif;
+  --fs:'Fraunces',Georgia,serif;
+  --m:'JetBrains Mono',monospace;
+  --sb:240px;
+  --shadow:0 1px 3px rgba(44,36,22,.06),0 4px 12px rgba(44,36,22,.05);
+  --shadow-md:0 2px 8px rgba(44,36,22,.08),0 8px 24px rgba(44,36,22,.06);
 }
 html{font-size:13.5px}
 body{font-family:var(--f);background:var(--bg);color:var(--tx);height:100vh;-webkit-font-smoothing:antialiased;display:flex;overflow:hidden}
-::-webkit-scrollbar{width:4px;height:4px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--bd);border-radius:2px}
+::-webkit-scrollbar{width:4px;height:4px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--bd2);border-radius:2px}
 
 /* ── Sidebar ── */
-.sb{width:var(--sb);min-width:var(--sb);height:100vh;background:var(--bg2);border-right:1px solid var(--bd);display:flex;flex-direction:column;padding:16px 0;overflow-y:auto;flex-shrink:0}
-.sb-logo{padding:0 18px 14px;border-bottom:1px solid var(--bd);margin-bottom:12px}
-.sb-logo .t{font-size:.95rem;font-weight:600}
-.sb-logo .s{color:var(--acc);font-size:.6rem;text-transform:uppercase;letter-spacing:.8px;margin-top:2px}
-.sb-logo .db{font-size:.68rem;color:var(--tx3);margin-top:6px;padding:3px 8px;background:var(--bg3);border-radius:4px;border:1px solid var(--bd)}
+.sb{width:var(--sb);min-width:var(--sb);height:100vh;background:var(--bg2);border-right:1px solid var(--bd);display:flex;flex-direction:column;padding:16px 0;overflow-y:auto;flex-shrink:0;box-shadow:2px 0 8px rgba(44,36,22,.04)}
+.sb-logo{padding:0 20px 16px;border-bottom:1px solid var(--bd);margin-bottom:10px}
+.sb-logo .t{font-family:var(--fs);font-size:1.05rem;font-weight:600;color:var(--tx);letter-spacing:-.2px}
+.sb-logo .s{color:var(--acc);font-size:.6rem;text-transform:uppercase;letter-spacing:.9px;margin-top:2px;font-weight:500}
+.sb-logo .db{font-size:.67rem;color:var(--tx3);margin-top:8px;padding:4px 9px;background:var(--bg3);border-radius:5px;border:1px solid var(--bd)}
 .sb-logo .sl{font-size:.62rem;color:var(--tx3);margin-top:4px;display:flex;align-items:center;gap:4px}
 .dot-ok{width:5px;height:5px;border-radius:50%;background:var(--green);flex-shrink:0}
 .dot-err{width:5px;height:5px;border-radius:50%;background:var(--red);flex-shrink:0}
 .dot-ld{width:5px;height:5px;border-radius:50%;background:var(--amber);flex-shrink:0;animation:pulse 1s infinite}
-.sb-sec{padding:0 10px;margin-bottom:6px}
-.sb-lbl{font-size:.6rem;text-transform:uppercase;letter-spacing:1px;color:var(--tx3);padding:0 8px;margin-bottom:6px}
-.sb-item{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:var(--r);cursor:pointer;transition:all .12s;margin-bottom:1px;font-size:.84rem;color:var(--tx2);position:relative;user-select:none}
+.sb-sec{padding:0 10px;margin-bottom:4px}
+.sb-lbl{font-size:.58rem;text-transform:uppercase;letter-spacing:1.1px;color:var(--tx3);padding:0 10px;margin-bottom:5px;font-weight:600}
+.sb-item{display:flex;align-items:center;gap:9px;padding:8px 12px;border-radius:var(--r);cursor:pointer;transition:all .15s;margin-bottom:1px;font-size:.84rem;color:var(--tx2);position:relative;user-select:none}
 .sb-item:hover{background:var(--bg3);color:var(--tx)}
-.sb-item.act{background:var(--bg3);color:var(--tx);font-weight:500}
-.sb-item.act::before{content:'';position:absolute;left:0;top:7px;bottom:7px;width:2.5px;border-radius:0 2px 2px 0;background:var(--acc)}
+.sb-item.act{background:var(--acc-bg);color:var(--acc);font-weight:500}
+.sb-item.act::before{content:'';position:absolute;left:0;top:6px;bottom:6px;width:3px;border-radius:0 3px 3px 0;background:var(--acc)}
 .sb-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
-.sb-cnt{margin-left:auto;font-size:.65rem;font-family:var(--m);color:var(--tx3);background:var(--bg);padding:1px 6px;border-radius:8px}
-.sb-cnt.al{background:var(--red-bg);color:var(--red)}
-.sb-bottom{margin-top:auto;padding:10px;display:flex;flex-direction:column;gap:4px}
-.sb-btn{display:flex;align-items:center;justify-content:center;gap:5px;width:100%;padding:7px;border-radius:var(--r);font-family:var(--f);font-size:.76rem;font-weight:500;cursor:pointer;border:1px solid var(--bd);background:var(--bg3);color:var(--tx2);transition:all .12s;text-decoration:none}
+.sb-cnt{margin-left:auto;font-size:.63rem;font-family:var(--m);color:var(--tx3);background:var(--bg3);padding:1px 7px;border-radius:9px;border:1px solid var(--bd)}
+.sb-cnt.al{background:var(--red-bg);color:var(--red);border-color:rgba(192,57,43,.2)}
+.sb-bottom{margin-top:auto;padding:10px;display:flex;flex-direction:column;gap:5px}
+.sb-btn{display:flex;align-items:center;justify-content:center;gap:5px;width:100%;padding:8px;border-radius:var(--r);font-family:var(--f);font-size:.76rem;font-weight:500;cursor:pointer;border:1px solid var(--bd);background:var(--bg3);color:var(--tx2);transition:all .15s;text-decoration:none}
 .sb-btn:hover{border-color:var(--bd2);background:var(--bg4);color:var(--tx)}
-.sb-btn.ac{border-color:var(--acc);color:var(--acc)}
-.sb-btn.ac:hover{background:var(--acc-bg)}
-.sb-btn:disabled{opacity:.45;cursor:not-allowed}
+.sb-btn.ac{border-color:var(--acc);color:var(--acc);background:var(--acc-bg)}
+.sb-btn.ac:hover{background:rgba(60,115,99,.14)}
+.sb-btn:disabled{opacity:.4;cursor:not-allowed}
 
 /* ── Main ── */
 .mn{flex:1;display:flex;flex-direction:column;height:100vh;overflow:hidden}
-.mn-head{padding:18px 24px 0;flex-shrink:0}
-.mn-title{font-size:1.1rem;font-weight:600;display:flex;align-items:center;gap:8px;margin-bottom:14px}
+.mn-head{padding:22px 28px 0;flex-shrink:0}
+.mn-title{font-family:var(--fs);font-size:1.25rem;font-weight:600;display:flex;align-items:center;gap:9px;margin-bottom:16px;color:var(--tx);letter-spacing:-.3px}
 .mn-title .dot{width:9px;height:9px;border-radius:50%}
-.tbar{display:flex;gap:6px;padding:10px 24px;align-items:center;flex-wrap:wrap;border-bottom:1px solid var(--bd);flex-shrink:0}
-.tbar select{font-family:var(--f);font-size:.78rem;padding:5px 22px 5px 8px;background:var(--bg3);border:1px solid var(--bd);border-radius:var(--r);color:var(--tx);appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5'%3E%3Cpath d='M0 0l4 5 4-5z' fill='%235E6878'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 6px center}
+.tbar{display:flex;gap:6px;padding:10px 28px;align-items:center;flex-wrap:wrap;border-bottom:1px solid var(--bd);flex-shrink:0;background:var(--bg2)}
+.tbar select{font-family:var(--f);font-size:.78rem;padding:6px 24px 6px 10px;background:var(--bg2);border:1px solid var(--bd);border-radius:var(--r);color:var(--tx);appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5'%3E%3Cpath d='M0 0l4 5 4-5z' fill='%239E8E77'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 8px center;transition:border-color .12s}
+.tbar select:hover{border-color:var(--bd2)}
 .tbar .spacer{flex:1}
 .tbar .count{font-size:.72rem;color:var(--tx3);font-family:var(--m)}
-.mn-body{flex:1;overflow-y:auto;padding:0 24px 40px}
+.mn-body{flex:1;overflow-y:auto;padding:0 28px 40px}
 
 /* ── Stats cards ── */
-.ov-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;margin-bottom:16px}
-.ov-stat{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rl);padding:12px;position:relative;overflow:hidden;animation:slideUp .25s ease both}
-.ov-stat::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
-.ov-stat .l{font-size:.64rem;text-transform:uppercase;letter-spacing:.6px;color:var(--tx3);margin-bottom:3px}
-.ov-stat .v{font-size:1.3rem;font-weight:600;font-family:var(--m)}
+.ov-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:10px;margin-bottom:18px}
+.ov-stat{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rl);padding:14px 14px 12px;position:relative;overflow:hidden;animation:slideUp .25s ease both;box-shadow:var(--shadow)}
+.ov-stat::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:var(--rl) var(--rl) 0 0}
+.ov-stat .l{font-size:.63rem;text-transform:uppercase;letter-spacing:.6px;color:var(--tx3);margin-bottom:4px;font-weight:500}
+.ov-stat .v{font-size:1.4rem;font-weight:600;font-family:var(--fs);letter-spacing:-.5px}
 .c1::before{background:var(--cyan)}.c1 .v{color:var(--cyan)}
 .c4::before{background:var(--green)}.c4 .v{color:var(--green)}
 .c2::before{background:var(--blue)}.c2 .v{color:var(--blue)}
@@ -80,68 +88,87 @@ body{font-family:var(--f);background:var(--bg);color:var(--tx);height:100vh;-web
 .ov-stat:nth-child(4){animation-delay:.09s}.ov-stat:nth-child(5){animation-delay:.12s}.ov-stat:nth-child(6){animation-delay:.15s}
 
 /* ── Charts ── */
-.ov-charts{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0}
-.ov-card{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rl);padding:14px 16px}
-.ov-card h4{font-size:.74rem;font-weight:500;color:var(--tx2);margin-bottom:10px;text-transform:uppercase;letter-spacing:.4px}
-.sbar{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.ov-charts{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0}
+.ov-card{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rl);padding:16px 18px;box-shadow:var(--shadow)}
+.ov-card h4{font-size:.65rem;font-weight:600;color:var(--tx3);margin-bottom:12px;text-transform:uppercase;letter-spacing:.8px}
+.sbar{display:flex;align-items:center;gap:9px;margin-bottom:7px}
 .sbar-l{font-size:.72rem;color:var(--tx2);min-width:100px;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex-shrink:0}
-.sbar-t{flex:1;height:18px;background:var(--bg);border-radius:3px;overflow:hidden;display:flex}
+.sbar-t{flex:1;height:16px;background:var(--bg3);border-radius:20px;overflow:hidden;display:flex}
 .sbar-s{height:100%}
 .sbar-v{font-size:.68rem;font-family:var(--m);color:var(--tx3);min-width:22px;text-align:right;flex-shrink:0}
 
 /* ── Workload table ── */
 .wl-table{width:100%;border-collapse:collapse;margin-top:12px}
-.wl-table th{padding:8px 10px;text-align:left;font-size:.66rem;text-transform:uppercase;letter-spacing:.7px;color:var(--tx3);font-weight:500;background:var(--bg2);border-bottom:1px solid var(--bd);position:sticky;top:0;z-index:2;white-space:nowrap}
-.wl-table td{padding:7px 10px;border-bottom:1px solid var(--bd);font-size:.82rem;vertical-align:middle}
+.wl-table th{padding:9px 12px;text-align:left;font-size:.63rem;text-transform:uppercase;letter-spacing:.8px;color:var(--tx3);font-weight:600;background:var(--bg3);border-bottom:1px solid var(--bd);position:sticky;top:0;z-index:2;white-space:nowrap}
+.wl-table td{padding:9px 12px;border-bottom:1px solid var(--bd);font-size:.82rem;vertical-align:middle;background:var(--bg2)}
 .wl-table tr:hover td{background:var(--bg3)}
-.bar-track{display:flex;height:14px;background:var(--bg);border-radius:3px;overflow:hidden;min-width:80px}
+.bar-track{display:flex;height:12px;background:var(--bg3);border-radius:20px;overflow:hidden;min-width:80px}
 .bar-seg{height:100%}
 
 /* ── Task rows ── */
-.task-row{display:flex;align-items:center;gap:10px;padding:8px 12px;border-bottom:1px solid var(--bd);font-size:.82rem;cursor:pointer;transition:background .08s;text-decoration:none}
+.task-row{display:flex;align-items:center;gap:10px;padding:9px 14px;border-bottom:1px solid var(--bd);font-size:.82rem;cursor:pointer;transition:background .1s;text-decoration:none;background:var(--bg2)}
 .task-row:hover{background:var(--bg3)}
 .task-name{flex:1;font-weight:500;color:var(--tx)}
 .task-meta{display:flex;align-items:center;gap:5px;flex-shrink:0;flex-wrap:wrap;justify-content:flex-end}
-.tag{font-size:.68rem;padding:2px 8px;border-radius:4px;white-space:nowrap}
+.tag{font-size:.67rem;padding:2px 9px;border-radius:20px;white-space:nowrap;font-weight:500}
 
 /* ── Alerts ── */
-.alert-card{border-radius:var(--r);padding:10px 14px;display:flex;align-items:center;gap:12px;border:1px solid var(--bd);margin-bottom:6px;background:var(--bg2);text-decoration:none;transition:background .08s}
-.alert-card:hover{background:var(--bg3)}
+.alert-card{border-radius:var(--r);padding:11px 16px;display:flex;align-items:center;gap:12px;border:1px solid var(--bd);margin-bottom:7px;background:var(--bg2);text-decoration:none;transition:all .12s;box-shadow:var(--shadow)}
+.alert-card:hover{background:var(--bg3);box-shadow:var(--shadow-md)}
 .alert-card.a-o{border-left:3px solid var(--red)}
 .alert-card.a-u{border-left:3px solid var(--orange)}
 .alert-card.a-n{border-left:3px solid var(--amber)}
 .al-body{flex:1;min-width:0}
-.al-title{font-size:.8rem;font-weight:600;color:var(--tx)}
-.al-sub{font-size:.68rem;color:var(--tx3);margin-top:1px}
+.al-title{font-size:.82rem;font-weight:600;color:var(--tx)}
+.al-sub{font-size:.68rem;color:var(--tx3);margin-top:2px}
 
-/* ── Setup ── */
-.setup-card{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rl);padding:18px 20px;margin:14px 0}
-.setup-card h4{font-size:.86rem;font-weight:600;color:var(--tx);margin-bottom:12px}
-.step{display:flex;gap:10px;margin-bottom:12px}
-.step-n{width:24px;height:24px;border-radius:50%;background:var(--acc-bg);border:1px solid var(--acc);color:var(--acc);font-size:.7rem;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
-.step-b{font-size:.78rem;color:var(--tx2);line-height:1.65}
+/* ── Setup / Guide ── */
+.setup-card{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rl);padding:20px 22px;margin:14px 0;box-shadow:var(--shadow)}
+.setup-card h4{font-family:var(--fs);font-size:.95rem;font-weight:600;color:var(--tx);margin-bottom:14px;letter-spacing:-.2px}
+.step{display:flex;gap:12px;margin-bottom:12px}
+.step-n{width:24px;height:24px;border-radius:50%;background:var(--acc-bg);border:1px solid rgba(60,115,99,.3);color:var(--acc);font-size:.68rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.step-b{font-size:.78rem;color:var(--tx2);line-height:1.7}
 .step-b strong{color:var(--tx);font-weight:500}
-.step-b a{color:var(--acc);text-decoration:none}
+.step-b a{color:var(--acc);text-decoration:none;font-weight:500}
 .step-b a:hover{text-decoration:underline}
-.step-b code{background:var(--bg3);padding:2px 5px;border-radius:3px;font-family:var(--m);font-size:.7rem;color:var(--acc)}
-.info-box{background:var(--blue-bg);border:1px solid rgba(74,158,245,.2);border-radius:var(--r);padding:10px 14px;font-size:.76rem;color:var(--tx2);line-height:1.6;margin-bottom:10px}
+.step-b code{background:var(--bg3);padding:2px 6px;border-radius:4px;font-family:var(--m);font-size:.7rem;color:var(--acc);border:1px solid var(--bd)}
+.info-box{background:var(--blue-bg);border:1px solid rgba(37,99,176,.15);border-radius:var(--r);padding:11px 16px;font-size:.78rem;color:var(--tx2);line-height:1.65;margin-bottom:12px}
 .info-box strong{color:var(--blue)}
 
 /* ── Loading / Empty ── */
 .loading{display:flex;align-items:center;justify-content:center;flex-direction:column;padding:60px 0;gap:12px;color:var(--tx3)}
-.spinner{width:24px;height:24px;border:2px solid var(--bd);border-top-color:var(--acc);border-radius:50%;animation:spin .7s linear infinite}
+.spinner{width:24px;height:24px;border:2px solid var(--bd2);border-top-color:var(--acc);border-radius:50%;animation:spin .7s linear infinite}
 .empty{text-align:center;padding:40px;color:var(--tx3);font-size:.84rem}
 
+/* ── Kanban ── */
+.kb-wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:16px;align-items:start}
+.kb-col{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rl);padding:14px;min-height:280px;display:flex;flex-direction:column;box-shadow:var(--shadow)}
+.kb-hd{display:flex;align-items:center;gap:7px;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--bd)}
+.kb-hd .kd{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.kb-hd .kt{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--tx2);flex:1}
+.kb-hd .kc-cnt{font-size:.63rem;font-family:var(--m);color:var(--tx3);background:var(--bg3);padding:1px 7px;border-radius:9px;border:1px solid var(--bd)}
+.kb-body{flex:1;min-height:32px}
+.kc{background:var(--bg3);border:1px solid var(--bd);border-radius:var(--r);padding:10px 12px;margin-bottom:6px;cursor:pointer;transition:all .15s;position:relative;text-decoration:none;display:block}
+.kc:hover{border-color:var(--bd2);transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.kc-type{font-size:.6rem;color:var(--tx3);margin-bottom:3px;font-weight:500;text-transform:uppercase;letter-spacing:.4px}
+.kc-name{font-size:.78rem;font-weight:600;color:var(--tx);line-height:1.35;margin-bottom:6px}
+.kc-foot{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+.kc-tag{font-size:.6rem;padding:1px 6px;border-radius:20px;font-weight:500;white-space:nowrap}
+.kb-vtab{display:flex;border-bottom:1px solid var(--bd);margin-bottom:0;background:var(--bg2)}
+.kb-vtab-item{padding:8px 18px;font-size:.8rem;font-weight:500;color:var(--tx3);cursor:pointer;border-bottom:2px solid transparent;transition:all .12s;user-select:none}
+.kb-vtab-item:hover{color:var(--tx)}
+.kb-vtab-item.act{color:var(--acc);border-bottom-color:var(--acc)}
+@media(max-width:900px){.kb-wrap{grid-template-columns:1fr 1fr}}
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-@keyframes slideUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideUp{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
 
 @media(max-width:900px){
   .ov-charts{grid-template-columns:1fr}
   .sb{width:50px;min-width:50px}
   .sb-logo .t,.sb-logo .s,.sb-logo .db,.sb-logo .sl,.sb-lbl,.sb-item>span:not(.sb-dot),.sb-cnt{display:none}
   .sb-item{justify-content:center;padding:8px}
-  .mn-body{padding:0 12px 40px}.mn-head{padding:12px 12px 0}.tbar{padding:8px 12px}
+  .mn-body{padding:0 14px 40px}.mn-head{padding:14px 14px 0}.tbar{padding:8px 14px}
 }
 </style>
 </head>
@@ -159,9 +186,9 @@ var TC = {
   "OFF":"var(--tx3)","Other":"var(--orange)","FEATURE":"var(--acc)"
 };
 var TB = {
-  "CHUẨN BỊ":"rgba(62,207,142,.12)","BUILD":"rgba(74,158,245,.1)","BẢO TRÌ":"rgba(245,87,78,.1)",
-  "H5 EVENT":"rgba(167,139,250,.1)","TECH":"rgba(34,211,238,.1)","MARKETING":"rgba(245,166,35,.1)",
-  "OFF":"rgba(94,104,120,.15)","Other":"rgba(255,107,53,.1)","FEATURE":"rgba(62,207,180,.08)"
+  "CHUẨN BỊ":"rgba(60,115,99,.1)","BUILD":"rgba(37,99,176,.08)","BẢO TRÌ":"rgba(192,57,43,.08)",
+  "H5 EVENT":"rgba(109,63,160,.08)","TECH":"rgba(14,116,144,.08)","MARKETING":"rgba(180,83,9,.08)",
+  "OFF":"rgba(158,142,119,.12)","Other":"rgba(194,84,10,.08)","FEATURE":"rgba(60,115,99,.08)"
 };
 
 /* ================================================================
@@ -169,10 +196,20 @@ var TB = {
    ================================================================ */
 var TASKS     = [];
 var syncedAt  = null;
-var syncSt    = "idle"; // idle | loading | ok | err
+var syncSt    = "idle";
 var syncErr   = "";
 var page      = "overview";
+var dbView    = "kanban";
 var flt       = {type:"All", company:"All", pic:"All", done:"All"};
+
+/* Status config */
+var STATUSES = ["To Do","In Progress","In Review","Done"];
+var SC = {
+  "To Do":     {color:"var(--tx3)",    bg:"rgba(158,142,119,.12)", dot:"#9E8E77"},
+  "In Progress":{color:"var(--blue)",  bg:"var(--blue-bg)",        dot:"#2563B0"},
+  "In Review":  {color:"var(--purple)",bg:"var(--purple-bg)",      dot:"#6D3FA0"},
+  "Done":       {color:"var(--green)", bg:"var(--green-bg)",       dot:"#3C7363"}
+};
 
 /* ================================================================
    HELPERS
@@ -181,6 +218,15 @@ function E(s){return String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").re
 function uniq(arr,k){var s=new Set();arr.forEach(function(r){if(r[k])s.add(r[k])});return Array.from(s).sort()}
 function typeBadge(tp){
   return '<span class="tag" style="background:'+(TB[tp]||"var(--bg3)")+';color:'+(TC[tp]||"var(--tx3)")+'">'+E(tp)+'</span>';
+}
+function statusBadge(st){
+  var c=SC[st]||SC["To Do"];
+  return '<span style="display:inline-flex;align-items:center;gap:4px;padding:2px 9px;border-radius:20px;font-size:.67rem;font-weight:500;background:'+c.bg+';color:'+c.color+'"><span style="width:5px;height:5px;border-radius:50%;background:'+c.dot+';flex-shrink:0"></span>'+E(st||"To Do")+'</span>';
+}
+function getStatusFromTask(t){
+  // Prefer explicit status field; fallback: done→Done, else To Do
+  if(t.status&&STATUSES.indexOf(t.status)>-1) return t.status;
+  return t.done?"Done":"To Do";
 }
 function filtered(){
   return TASKS.filter(function(t){
@@ -213,12 +259,84 @@ function fmtTime(iso){
 }
 
 /* ================================================================
-   LOAD data.json  (same-origin fetch — works on GitHub Pages)
+   INLINE DATA — synced by Claude on 2026-03-23
+   Dùng khi mở file local (file://). Trên GitHub Pages sẽ dùng
+   data.json được GitHub Actions cập nhật tự động.
+   ================================================================ */
+var INLINE_DATA = {
+  synced_at: "2026-03-23T00:00:00.000Z",
+  tasks: [
+    {id:"329d7cf4b54b819da3f6ca4ba239f065",name:"task tăng performance PTG",type:"CHUẨN BỊ",company:"",pic:"Khiêm",version:"",date_start:"2026-04-04",date_end:"2026-04-16",done:false,status:"To Do",url:"https://www.notion.so/329d7cf4b54b819da3f6ca4ba239f065"},
+    {id:"329d7cf4b54b81f98f82c539b4758ecd",name:"[H5] Play Daily",type:"H5 EVENT",company:"VNG",pic:"VNG",version:"",date_start:"2026-01-16",date_end:"2026-01-31",done:false,status:"In Progress",url:"https://www.notion.so/329d7cf4b54b81f98f82c539b4758ecd"},
+    {id:"329d7cf4b54b8173a1f4c7d39ec0f357",name:"[H5] Gieo quẻ",type:"H5 EVENT",company:"VNG",pic:"VNG",version:"",date_start:"2026-02-17",date_end:"2026-02-19",done:true,status:"Done",url:"https://www.notion.so/329d7cf4b54b8173a1f4c7d39ec0f357"},
+    {id:"329d7cf4b54b815b9fe1dca726b60df0",name:"VNG off: Giỗ tổ Hùng Vương",type:"OFF",company:"VNG",pic:"VNG",version:"",date_start:"2026-04-25",date_end:"2026-04-27",done:false,status:"To Do",url:"https://www.notion.so/329d7cf4b54b815b9fe1dca726b60df0"},
+    {id:"329d7cf4b54b810da3eec5a165f863be",name:"Haegin off: Tết Âm Lịch",type:"OFF",company:"HAEGIN",pic:"HAEGIN",version:"",date_start:"2026-02-14",date_end:"2026-02-18",done:true,status:"Done",url:"https://www.notion.so/329d7cf4b54b810da3eec5a165f863be"},
+    {id:"329d7cf4b54b814e9825f5d7198879f7",name:"VNG off: Tết Âm Lịch",type:"OFF",company:"VNG",pic:"VNG",version:"",date_start:"2026-02-14",date_end:"2026-02-18",done:true,status:"Done",url:"https://www.notion.so/329d7cf4b54b814e9825f5d7198879f7"},
+    {id:"329d7cf4b54b818293f4ea7b3ab4f1b6",name:"VNG & Haegin off: Tết Âm Lịch",type:"OFF",company:"VNG",pic:"VNG",version:"",date_start:"2026-01-26",date_end:"2026-02-04",done:true,status:"Done",url:"https://www.notion.so/329d7cf4b54b818293f4ea7b3ab4f1b6"},
+    {id:"329d7cf4b54b8196b186f44cf8d38027",name:"VNG off: Tết Dương Lịch",type:"OFF",company:"VNG",pic:"VNG",version:"",date_start:"2026-01-01",date_end:"2026-01-01",done:true,status:"Done",url:"https://www.notion.so/329d7cf4b54b8196b186f44cf8d38027"},
+    {id:"329d7cf4b54b8159b9f3d8d6d904b632",name:"VNG off: Team Building GS9",type:"OFF",company:"VNG",pic:"VNG",version:"",date_start:"2025-12-20",date_end:"2025-12-20",done:true,status:"Done",url:"https://www.notion.so/329d7cf4b54b8159b9f3d8d6d904b632"},
+    {id:"329d7cf4b54b81988380e800447bd612",name:"[v2.24] ItemID, Action Key",type:"BUILD",company:"HAEGIN",pic:"HAEGIN",version:"BUILD v2.24",date_start:"2025-12-19",date_end:"2025-12-19",done:true,status:"Done",url:"https://www.notion.so/329d7cf4b54b81988380e800447bd612"},
+    {id:"329d7cf4b54b813392f0f267a3000274",name:"[v2.23] ItemID, Action Key",type:"BUILD",company:"HAEGIN",pic:"HAEGIN",version:"BUILD v2.23",date_start:"2025-12-09",date_end:"2025-12-09",done:true,status:"Done",url:"https://www.notion.so/329d7cf4b54b813392f0f267a3000274"},
+    {id:"329d7cf4b54b81e6820bdf0c9db4c691",name:"[v2.25] ItemID, Action Key",type:"BUILD",company:"HAEGIN",pic:"HAEGIN",version:"BUILD v2.25",date_start:"2026-02-09",date_end:"2026-02-09",done:true,status:"Done",url:"https://www.notion.so/329d7cf4b54b81e6820bdf0c9db4c691"},
+    {id:"329d7cf4b54b81e79755d755482eb992",name:"[v2.26] ItemID, Action Key",type:"BUILD",company:"HAEGIN",pic:"HAEGIN",version:"BUILD v2.26",date_start:"2026-03-09",date_end:"2026-03-09",done:true,status:"Done",url:"https://www.notion.so/329d7cf4b54b81e79755d755482eb992"},
+    {id:"329d7cf4b54b811c83ffd8ad943e8442",name:"[v2.27] ItemID, Action Key",type:"BUILD",company:"HAEGIN",pic:"HAEGIN",version:"BUILD v2.27",date_start:"2026-04-13",date_end:"2026-04-13",done:false,status:"To Do",url:"https://www.notion.so/329d7cf4b54b811c83ffd8ad943e8442"},
+    {id:"329d7cf4b54b81429206d8c85f1e6fc9",name:"[v2.24] Image Source HAEGIN",type:"BUILD",company:"HAEGIN",pic:"HAEGIN",version:"BUILD v2.24",date_start:"2026-01-19",date_end:"2026-01-19",done:true,status:"Done",url:"https://www.notion.so/329d7cf4b54b81429206d8c85f1e6fc9"},
+    {id:"329d7cf4b54b815c90b9dffc14ad9b5d",name:"[v2.23] Submit iOS/AOS (HAEGIN) D-3",type:"BUILD",company:"HAEGIN",pic:"HAEGIN",version:"BUILD v2.23",date_start:"2026-01-05",date_end:"2026-01-05",done:true,status:"Done",url:"https://www.notion.so/329d7cf4b54b815c90b9dffc14ad9b5d"},
+    {id:"329d7cf4b54b812ea4d3e7e99512b646",name:"Artwork Pony gửi Apple",type:"BUILD",company:"VNG",pic:"Lisa",version:"BUILD v2.23",date_start:"2026-01-06",date_end:"2026-01-06",done:false,status:"In Review",url:"https://www.notion.so/329d7cf4b54b812ea4d3e7e99512b646"},
+    {id:"329d7cf4b54b814c978be9aa12f7d2b3",name:"[v2.23] VNG submit iOS/AOS (D-2)",type:"BUILD",company:"VNG",pic:"Lisa",version:"BUILD v2.23",date_start:"2026-01-06",date_end:"2026-01-06",done:false,status:"In Progress",url:"https://www.notion.so/329d7cf4b54b814c978be9aa12f7d2b3"},
+    {id:"329d7cf4b54b81d391c5e2642a739637",name:"[v2.22.2] Submit (D-1)",type:"BUILD",company:"VNG",pic:"Lisa",version:"BUILD v2.22.2",date_start:"2025-12-04",date_end:"2025-12-04",done:true,status:"Done",url:"https://www.notion.so/329d7cf4b54b81d391c5e2642a739637"},
+    {id:"329d7cf4b54b81f58890df4b36a8ac17",name:"[v2.22.2] Build (D-2)",type:"BUILD",company:"VNG",pic:"Lisa",version:"BUILD v2.22.2",date_start:"2025-12-03",date_end:"2025-12-03",done:true,status:"Done",url:"https://www.notion.so/329d7cf4b54b81f58890df4b36a8ac17"},
+    {id:"329d7cf4b54b81fcb006e540bfd0746b",name:"[v2.23] QA Build (D-8)",type:"BUILD",company:"VNG",pic:"Lisa",version:"BUILD v2.23",date_start:"2025-12-30",date_end:"2025-12-30",done:true,status:"Done",url:"https://www.notion.so/329d7cf4b54b81fcb006e540bfd0746b"},
+    {id:"329d7cf4b54b81f9a502cf1146361f48",name:"[v2.23] Final build (D-3)",type:"BUILD",company:"VNG",pic:"Lisa",version:"BUILD v2.23",date_start:"2026-01-05",date_end:"2026-01-05",done:true,status:"Done",url:"https://www.notion.so/329d7cf4b54b81f9a502cf1146361f48"},
+    {id:"329d7cf4b54b817c8a4dd5bb64287a98",name:"Mini Update v2.23",type:"BUILD",company:"VNG",pic:"Lisa",version:"BUILD v2.23",date_start:"2026-01-14",date_end:"2026-01-14",done:true,status:"Done",url:"https://www.notion.so/329d7cf4b54b817c8a4dd5bb64287a98"},
+    {id:"329d7cf4b54b8146921bc4a6fa3ab165",name:"[V2.23] Share kết quả submit (D-1)",type:"BUILD",company:"VNG",pic:"Lisa",version:"BUILD v2.23",date_start:"2026-01-07",date_end:"2026-01-07",done:true,status:"Done",url:"https://www.notion.so/329d7cf4b54b8146921bc4a6fa3ab165"},
+    {id:"329d7cf4b54b81199ab2dbcce44bb50d",name:"[v2.23] Chuyển server live (D-1)",type:"BUILD",company:"VNG",pic:"Lisa",version:"BUILD v2.23",date_start:"2026-01-07",date_end:"2026-01-07",done:true,status:"Done",url:"https://www.notion.so/329d7cf4b54b81199ab2dbcce44bb50d"},
+    {id:"329d7cf4b54b81b88b60f157e5148cfa",name:"[v2.24] QA Build (D-8)",type:"BUILD",company:"VNG",pic:"Lisa",version:"BUILD v2.24",date_start:"2026-01-12",date_end:"2026-01-12",done:true,status:"Done",url:"https://www.notion.so/329d7cf4b54b81b88b60f157e5148cfa"},
+    {id:"329d7cf4b54b813a813ed23d26c8957c",name:"[v2.24] Final Build (D-3)",type:"BUILD",company:"VNG",pic:"Lisa",version:"BUILD v2.24",date_start:"2026-01-19",date_end:"2026-01-19",done:true,status:"Done",url:"https://www.notion.so/329d7cf4b54b813a813ed23d26c8957c"},
+    {id:"329d7cf4b54b8101b3a3ddb123b28bc4",name:"[v2.25] QA Build (D-8)",type:"BUILD",company:"VNG",pic:"Lisa",version:"BUILD v2.25",date_start:"2026-02-16",date_end:"2026-02-16",done:true,status:"Done",url:"https://www.notion.so/329d7cf4b54b8101b3a3ddb123b28bc4"},
+    {id:"329d7cf4b54b8134a72dd8ae974d9727",name:"[v2.25] Final Build (D-3)",type:"BUILD",company:"VNG",pic:"Lisa",version:"BUILD v2.25",date_start:"2026-02-16",date_end:"2026-02-16",done:true,status:"Done",url:"https://www.notion.so/329d7cf4b54b8134a72dd8ae974d9727"},
+    {id:"329d7cf4b54b81408a83cbb1b724d8d2",name:"[v2.26] QA Build (D-8)",type:"BUILD",company:"VNG",pic:"Lisa",version:"BUILD v2.26",date_start:"2026-03-09",date_end:"2026-03-09",done:true,status:"Done",url:"https://www.notion.so/329d7cf4b54b81408a83cbb1b724d8d2"},
+    {id:"329d7cf4b54b81f5b167c8d321a34b2c",name:"[v2.26] Final Build (D-3)",type:"BUILD",company:"VNG",pic:"Lisa",version:"BUILD v2.26",date_start:"2026-03-16",date_end:"2026-03-16",done:true,status:"Done",url:"https://www.notion.so/329d7cf4b54b81f5b167c8d321a34b2c"},
+    {id:"329d7cf4b54b817b89f0cfa16fb97e41",name:"[v2.27] QA Build (D-8)",type:"BUILD",company:"VNG",pic:"Lisa",version:"BUILD v2.27",date_start:"2026-04-06",date_end:"2026-04-06",done:false,status:"In Progress",url:"https://www.notion.so/329d7cf4b54b817b89f0cfa16fb97e41"},
+    {id:"329d7cf4b54b814b9d58e4e7a9b648e7",name:"[v2.27] Final Build (D-3)",type:"BUILD",company:"VNG",pic:"Lisa",version:"BUILD v2.27",date_start:"2026-04-20",date_end:"2026-04-20",done:false,status:"To Do",url:"https://www.notion.so/329d7cf4b54b814b9d58e4e7a9b648e7"},
+    {id:"329d7cf4b54b818ea8b0e31a2a16bde0",name:"Gửi lại danh sách Spring and Flower",type:"MARKETING",company:"VNG",pic:"MKT",version:"MARKETING v2.24",date_start:"2025-12-16",date_end:"2025-12-16",done:true,status:"Done",url:"https://www.notion.so/329d7cf4b54b818ea8b0e31a2a16bde0"},
+    {id:"329d7cf4b54b81e188c5cf4c87c9e6dd",name:"PSD coupon tri ân toàn server",type:"MARKETING",company:"VNG",pic:"MKT",version:"MARKETING v2.23",date_start:"2026-01-14",date_end:"2026-01-14",done:true,status:"Done",url:"https://www.notion.so/329d7cf4b54b81e188c5cf4c87c9e6dd"},
+    {id:"329d7cf4b54b81798fb3c7c90757076b",name:"Gửi video recap Tết (áp v2.24)",type:"MARKETING",company:"VNG",pic:"MKT",version:"MARKETING v2.24",date_start:"2026-01-22",date_end:"2026-01-22",done:true,status:"Done",url:"https://www.notion.so/329d7cf4b54b81798fb3c7c90757076b"},
+    {id:"329d7cf4b54b816f89a8e672fc7d9690",name:"Video recap 2025 (v2.24)",type:"MARKETING",company:"VNG",pic:"MKT",version:"MARKETING v2.24",date_start:"2026-01-22",date_end:"2026-01-22",done:true,status:"Done",url:"https://www.notion.so/329d7cf4b54b816f89a8e672fc7d9690"},
+    {id:"329d7cf4b54b819fa83ee5ea765a8422",name:"Event ngọ quế v2.23",type:"MARKETING",company:"VNG",pic:"MKT",version:"MARKETING v2.23",date_start:"2026-01-31",date_end:"2026-02-21",done:false,status:"In Progress",url:"https://www.notion.so/329d7cf4b54b819fa83ee5ea765a8422"},
+    {id:"329d7cf4b54b8160b361fb92f8c0eb07",name:"Event Elemental Fantasy - Nhận bài thi",type:"MARKETING",company:"VNG",pic:"MKT",version:"MARKETING v2.25",date_start:"2026-02-24",date_end:"2026-03-07",done:true,status:"Done",url:"https://www.notion.so/329d7cf4b54b8160b361fb92f8c0eb07"},
+    {id:"329d7cf4b54b8159ad06d12cebcb91d2",name:"Event Elemental Fantasy - User vote",type:"MARKETING",company:"VNG",pic:"MKT",version:"MARKETING v2.25",date_start:"2026-03-07",date_end:"2026-03-14",done:true,status:"Done",url:"https://www.notion.so/329d7cf4b54b8159ad06d12cebcb91d2"},
+    {id:"329d7cf4b54b819d8ef9f4604a43909f",name:"Event Elemental Fantasy - Công bố giải",type:"MARKETING",company:"VNG",pic:"MKT",version:"MARKETING v2.25",date_start:"2026-03-14",date_end:"2026-03-14",done:true,status:"Done",url:"https://www.notion.so/329d7cf4b54b819d8ef9f4604a43909f"},
+    {id:"329d7cf4b54b81849da4de2ca7ab1a2b",name:"Tiến hành khảo sát H5 v2.22",type:"H5 EVENT",company:"VNG",pic:"MKT",version:"H5 v2.22",date_start:"2025-11-15",date_end:"2025-11-30",done:true,status:"Done",url:"https://www.notion.so/329d7cf4b54b81849da4de2ca7ab1a2b"},
+    {id:"329d7cf4b54b81bea701d83cf1bc6b11",name:"Remind đối tác thay link H5 QA v2.22.2",type:"H5 EVENT",company:"VNG",pic:"Dev",version:"H5 v2.22.2",date_start:"2025-11-28",date_end:"2025-11-28",done:true,status:"Done",url:"https://www.notion.so/329d7cf4b54b81bea701d83cf1bc6b11"},
+    {id:"329d7cf4b54b81878100c0aaa161ef5d",name:"[Gameverse] Vòng loại",type:"H5 EVENT",company:"VNG",pic:"Dev",version:"H5 v2.26",date_start:"2026-03-22",date_end:"2026-04-15",done:false,status:"In Progress",url:"https://www.notion.so/329d7cf4b54b81878100c0aaa161ef5d"},
+    {id:"329d7cf4b54b81898b65df8d111ab09e",name:"PUM T12/2025",type:"CHUẨN BỊ",company:"VNG",pic:"Khiêm",version:"",date_start:"2025-12-01",date_end:"2025-12-31",done:true,status:"Done",url:"https://www.notion.so/329d7cf4b54b81898b65df8d111ab09e"},
+    {id:"329d7cf4b54b8149ada2db83747634c6",name:"Haegin off: Ngày bầu cử",type:"OFF",company:"HAEGIN",pic:"HAEGIN",version:"",date_start:"2026-06-03",date_end:"2026-06-03",done:false,status:"To Do",url:"https://www.notion.so/329d7cf4b54b8149ada2db83747634c6"},
+    {id:"329d7cf4b54b81bfbbf0e6c8a6080758",name:"Haegin off: Ngày Lập Quốc",type:"OFF",company:"HAEGIN",pic:"HAEGIN",version:"",date_start:"2026-08-15",date_end:"2026-08-15",done:false,status:"To Do",url:"https://www.notion.so/329d7cf4b54b81bfbbf0e6c8a6080758"},
+    {id:"329d7cf4b54b8175a67aca583f60a459",name:"Haegin off: Ngày Thiếu Nhi",type:"OFF",company:"HAEGIN",pic:"HAEGIN",version:"",date_start:"2026-05-05",date_end:"2026-05-05",done:false,status:"To Do",url:"https://www.notion.so/329d7cf4b54b8175a67aca583f60a459"}
+  ]
+};
+
+/* ================================================================
+   LOAD DATA — tự detect môi trường
+   • file://  → dùng INLINE_DATA ngay (không cần server)
+   • http(s)://  → fetch data.json (GitHub Pages, auto-update)
    ================================================================ */
 async function loadData(){
+  var isLocal = location.protocol === "file:";
+
+  if(isLocal){
+    // Chạy local: dùng inline data, không cần fetch
+    TASKS    = INLINE_DATA.tasks;
+    syncedAt = INLINE_DATA.synced_at;
+    syncSt   = "ok";
+    render();
+    return;
+  }
+
+  // Trên GitHub Pages: fetch data.json thật
   syncSt="loading"; render();
   try{
-    // cache-bust để luôn lấy version mới nhất
     var res = await fetch("data.json?t=" + Date.now());
     if(!res.ok) throw new Error("HTTP " + res.status);
     var json = await res.json();
@@ -226,8 +344,11 @@ async function loadData(){
     syncedAt = json.synced_at || null;
     syncSt   = "ok";
   } catch(err){
-    syncSt  = "err";
-    syncErr = err.message;
+    // Fallback về inline data nếu fetch thất bại
+    TASKS    = INLINE_DATA.tasks;
+    syncedAt = INLINE_DATA.synced_at;
+    syncSt   = "ok";
+    syncErr  = "(dùng cached data — " + err.message + ")";
   }
   render();
 }
@@ -253,11 +374,12 @@ function renderSidebar(){
 
   sb += '<div class="sb-sec"><div class="sb-lbl">Views</div>';
   [
-    {id:"overview", label:"Overview",       color:"var(--blue)",   cnt:TASKS.length,   al:false},
-    {id:"workload", label:"Workload / PIC",  color:"var(--purple)", cnt:pics.length,    al:false},
-    {id:"tasks",    label:"Task List",       color:"var(--cyan)",   cnt:filtered().length, al:false},
-    {id:"alerts",   label:"Alerts",          color:"var(--red)",    cnt:alerts.length,  al:true},
-    {id:"setup",    label:"Hướng dẫn",       color:"var(--tx3)",    cnt:0,              al:false},
+    {id:"overview",  label:"Overview",        color:"var(--blue)",   cnt:TASKS.length,      al:false},
+    {id:"database",  label:"Database",        color:"var(--acc)",    cnt:filtered().length, al:false},
+    {id:"workload",  label:"Workload / PIC",  color:"var(--purple)", cnt:pics.length,       al:false},
+    {id:"tasks",     label:"Task List",       color:"var(--cyan)",   cnt:0,                 al:false},
+    {id:"alerts",    label:"Alerts",          color:"var(--red)",    cnt:alerts.length,     al:true},
+    {id:"setup",     label:"Hướng dẫn",       color:"var(--tx3)",    cnt:0,                 al:false},
   ].forEach(function(item){
     sb += '<div class="sb-item'+(page===item.id?" act":"")+'" onclick="page=\''+item.id+'\';render()">';
     sb += '<span class="sb-dot" style="background:'+item.color+'"></span>';
@@ -289,7 +411,7 @@ function render(){
   if(syncSt==="loading"){
     document.getElementById("main").innerHTML =
       '<div class="mn-head"><div class="mn-title"><span class="dot" style="background:var(--acc)"></span>Đang tải dữ liệu...</div></div>' +
-      '<div class="mn-body"><div class="loading"><div class="spinner"></div><div>Đang fetch data.json...</div></div></div>';
+      '<div class="mn-body"><div class="loading"><div class="spinner"></div><div style="font-size:.82rem">Đang fetch data.json...</div></div></div>';
     return;
   }
 
@@ -342,9 +464,9 @@ function render(){
         var tc=compCt[co], dp=Math.round(dc/tc*100);
         bd+='<div class="sbar"><div class="sbar-l">'+E(co)+'</div><div class="sbar-t"><div class="sbar-s" style="width:'+dp+'%;background:var(--green)"></div><div class="sbar-s" style="width:'+(100-dp)+'%;background:var(--bd2)"></div></div><div class="sbar-v">'+tc+'</div></div>';
       });
-      bd += '<div style="display:flex;gap:10px;margin-top:6px">';
-      bd += '<span style="display:flex;align-items:center;gap:4px;font-size:.63rem;color:var(--tx3)"><i style="width:7px;height:7px;border-radius:2px;display:inline-block;background:var(--green)"></i>Done</span>';
-      bd += '<span style="display:flex;align-items:center;gap:4px;font-size:.63rem;color:var(--tx3)"><i style="width:7px;height:7px;border-radius:2px;display:inline-block;background:var(--bd2)"></i>Undone</span>';
+      bd += '<div style="display:flex;gap:12px;margin-top:8px">';
+      bd += '<span style="display:flex;align-items:center;gap:5px;font-size:.64rem;color:var(--tx3)"><i style="width:8px;height:8px;border-radius:50%;display:inline-block;background:var(--green)"></i>Done</span>';
+      bd += '<span style="display:flex;align-items:center;gap:5px;font-size:.64rem;color:var(--tx3)"><i style="width:8px;height:8px;border-radius:50%;display:inline-block;background:var(--bd2)"></i>Undone</span>';
       bd += '</div></div></div>';
 
       /* Upcoming */
@@ -357,7 +479,7 @@ function render(){
 
       if(upcoming.length){
         bd+='<div style="margin-top:14px;background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rl);overflow:hidden">';
-        bd+='<div style="padding:10px 14px;border-bottom:1px solid var(--bd);font-size:.78rem;font-weight:500;color:var(--tx2)">📅 Upcoming — 21 ngày tới ('+upcoming.length+')</div>';
+        bd+='<div style="padding:11px 16px;border-bottom:1px solid var(--bd);font-size:.78rem;font-weight:600;color:var(--tx2);font-family:var(--fs)">📅 Upcoming — 21 ngày tới ('+upcoming.length+')</div>';
         upcoming.forEach(function(t){
           var href=t.url||"https://www.notion.so/"+t.id.replace(/-/g,"");
           bd+='<a class="task-row" href="'+href+'" target="_blank">';
@@ -476,7 +598,7 @@ function render(){
     bd  = '<div class="info-box">Dashboard này dùng <strong>GitHub Actions</strong> để tự động fetch Notion → cập nhật <code>data.json</code> mỗi 2 giờ. File HTML đọc <code>data.json</code> — không cần backend, không lộ token.</div>';
 
     bd += '<div class="setup-card"><h4>🗂 Cấu trúc repo GitHub</h4>';
-    bd += '<div style="background:var(--bg3);border:1px solid var(--bd);border-radius:var(--r);padding:12px;font-family:var(--m);font-size:.74rem;color:var(--tx2);line-height:1.8">';
+    bd += '<div style="background:var(--bg3);border:1px solid var(--bd);border-radius:var(--r);padding:14px 16px;font-family:var(--m);font-size:.74rem;color:var(--tx2);line-height:1.9">';
     bd += 'your-repo/<br>';
     bd += '├── <span style="color:var(--acc)">index.html</span>        ← dashboard này<br>';
     bd += '├── <span style="color:var(--green)">data.json</span>         ← data Notion (tự update)<br>';
@@ -509,6 +631,81 @@ function render(){
     bd += '• Mỗi ngày 8h sáng (UTC+7 = 1h UTC): <code>0 1 * * *</code><br>';
     bd += '• Mỗi 30 phút: <code>*/30 * * * *</code> (minimum GitHub cho phép)</div></div>';
     bd += '</div>';
+  }
+
+  /* ── DATABASE (Kanban + Table) ── */
+  if(page==="database"){
+    var dbTypes    = uniq(TASKS,"type");
+    var dbCompanies= uniq(TASKS,"company");
+    var dbPics     = uniq(TASKS,"pic");
+    var dbFlt = {type:flt.type, company:flt.company, pic:flt.pic};
+    var dbTasks = TASKS.filter(function(t){
+      if(dbFlt.type!=="All"&&t.type!==dbFlt.type) return false;
+      if(dbFlt.company!=="All"&&t.company!==dbFlt.company) return false;
+      if(dbFlt.pic!=="All"&&t.pic!==dbFlt.pic) return false;
+      return true;
+    });
+
+    hd  = '<div class="mn-title"><span class="dot" style="background:var(--acc)"></span>Database</div>';
+    hd += '<div class="kb-vtab">';
+    hd += '<div class="kb-vtab-item'+(dbView==="kanban"?" act":"")+'" onclick="dbView=\'kanban\';render()">⬛ Kanban</div>';
+    hd += '<div class="kb-vtab-item'+(dbView==="table"?" act":"")+'" onclick="dbView=\'table\';render()">☰ Table</div>';
+    hd += '</div>';
+
+    tb  = '<select onchange="flt.type=this.value;render()"><option value="All">All Types</option>'+dbTypes.map(function(t){return'<option value="'+t+'"'+(flt.type===t?' selected':'')+'>'+t+'</option>'}).join('')+'</select>';
+    tb += '<select onchange="flt.company=this.value;render()"><option value="All">All Companies</option>'+dbCompanies.map(function(c){return'<option value="'+c+'"'+(flt.company===c?' selected':'')+'>'+c+'</option>'}).join('')+'</select>';
+    tb += '<select onchange="flt.pic=this.value;render()"><option value="All">All PICs</option>'+dbPics.map(function(p){return'<option value="'+p+'"'+(flt.pic===p?' selected':'')+'>'+p+'</option>'}).join('')+'</select>';
+    tb += '<span class="spacer"></span><span class="count">'+dbTasks.length+' tasks</span>';
+
+    /* ── KANBAN VIEW ── */
+    if(dbView==="kanban"){
+      bd = '<div class="kb-wrap">';
+      STATUSES.forEach(function(st){
+        var col = dbTasks.filter(function(t){ return getStatusFromTask(t)===st; });
+        var sc  = SC[st]||SC["To Do"];
+        bd += '<div class="kb-col">';
+        bd += '<div class="kb-hd"><span class="kd" style="background:'+sc.dot+'"></span><span class="kt">'+E(st)+'</span><span class="kc-cnt">'+col.length+'</span></div>';
+        bd += '<div class="kb-body">';
+        col.forEach(function(t){
+          var href = t.url||"https://www.notion.so/"+t.id.replace(/-/g,"");
+          var ds   = t.date_start?(t.date_end&&t.date_end!==t.date_start?t.date_start+" → "+t.date_end:t.date_start):"";
+          bd += '<a class="kc" href="'+href+'" target="_blank">';
+          if(t.type) bd += '<div class="kc-type">'+E(t.type)+'</div>';
+          bd += '<div class="kc-name">'+E(t.name)+'</div>';
+          bd += '<div class="kc-foot">';
+          if(t.company) bd += '<span class="kc-tag" style="background:var(--cyan-bg);color:var(--cyan)">'+E(t.company)+'</span>';
+          if(t.pic&&t.pic!=="VNG"&&t.pic!=="HAEGIN") bd += '<span class="kc-tag" style="background:var(--bg3);color:var(--tx3);border:1px solid var(--bd)">'+E(t.pic)+'</span>';
+          if(t.version) bd += '<span class="kc-tag" style="background:var(--bg3);color:var(--tx3)">'+E(t.version)+'</span>';
+          if(ds) bd += '<span class="kc-tag" style="background:var(--acc-bg);color:var(--acc)">'+ds+'</span>';
+          bd += '</div></a>';
+        });
+        if(!col.length) bd += '<div style="text-align:center;padding:20px 0;font-size:.76rem;color:var(--tx3)">Trống</div>';
+        bd += '</div></div>';
+      });
+      bd += '</div>';
+    }
+
+    /* ── TABLE VIEW ── */
+    if(dbView==="table"){
+      bd  = '<div style="overflow-x:auto;margin-top:12px;background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rl);overflow:hidden">';
+      bd += '<table class="wl-table" style="min-width:700px">';
+      bd += '<thead><tr><th>Task</th><th>Status</th><th>Type</th><th>PIC</th><th>Company</th><th>Version</th><th>Date</th></tr></thead><tbody>';
+      dbTasks.forEach(function(t){
+        var href = t.url||"https://www.notion.so/"+t.id.replace(/-/g,"");
+        var st   = getStatusFromTask(t);
+        var ds   = t.date_start?(t.date_end&&t.date_end!==t.date_start?t.date_start+" → "+t.date_end:t.date_start):"—";
+        bd += '<tr>';
+        bd += '<td><a href="'+href+'" target="_blank" style="color:var(--tx);font-weight:500;text-decoration:none">'+E(t.name)+'</a></td>';
+        bd += '<td>'+statusBadge(st)+'</td>';
+        bd += '<td>'+(t.type?typeBadge(t.type):"")+'</td>';
+        bd += '<td style="color:var(--tx2);font-size:.8rem">'+E(t.pic||"—")+'</td>';
+        bd += '<td>'+(t.company?'<span class="tag" style="background:var(--cyan-bg);color:var(--cyan)">'+E(t.company)+'</span>':"")+'</td>';
+        bd += '<td style="font-size:.72rem;color:var(--tx3);font-family:var(--m)">'+E(t.version||"—")+'</td>';
+        bd += '<td style="font-size:.72rem;color:var(--tx3);font-family:var(--m);white-space:nowrap">'+ds+'</td>';
+        bd += '</tr>';
+      });
+      bd += '</tbody></table></div>';
+    }
   }
 
   /* Assemble */
