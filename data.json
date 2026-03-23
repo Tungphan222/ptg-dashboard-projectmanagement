@@ -1,6 +1,6 @@
 {
-  "synced_at": "2026-03-23T09:13:00.820Z",
-  "count": 123,
+  "synced_at": "2026-03-23T09:22:01.758Z",
+  "count": 124,
   "tasks": [
     {
       "id": "329d7cf4-b54b-81b4-945b-c4ab58b56722",
@@ -589,6 +589,18 @@
       "date_end": "2026-04-02",
       "done": false,
       "url": "https://www.notion.so/2-25-Mini-Update-329d7cf4b54b81ff8f55db76b66e5f1e"
+    },
+    {
+      "id": "32cd7cf4-b54b-817c-b902-cc7189178dc5",
+      "name": "Meeting với Haegin",
+      "type": "CHUẨN BỊ",
+      "company": "",
+      "pic": "Lisa và Phượng",
+      "version": "",
+      "date_start": "2026-03-26",
+      "date_end": "2026-03-27",
+      "done": false,
+      "url": "https://www.notion.so/Meeting-v-i-Haegin-32cd7cf4b54b817cb902cc7189178dc5"
     },
     {
       "id": "329d7cf4-b54b-8159-ad06-d12cebcb91d2",
