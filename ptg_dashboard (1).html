@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PTG Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0B0E13;--bg2:#12161D;--bg3:#1A1F2A;--bg4:#232938;
+  --tx:#E8ECF2;--tx2:#9AA3B4;--tx3:#5E6878;
+  --bd:#2A3142;--bd2:#353E52;
+  --acc:#3ECFB4;--acc2:#2BA48E;--acc-bg:rgba(62,207,180,.08);
+  --blue:#4A9EF5;--blue-bg:rgba(74,158,245,.1);
+  --amber:#F5A623;--amber-bg:rgba(245,166,35,.1);
+  --red:#F5574E;--red-bg:rgba(245,87,78,.1);
+  --green:#3ECF8E;--green-bg:rgba(62,207,142,.1);
+  --purple:#A78BFA;--purple-bg:rgba(167,139,250,.1);
+  --orange:#FF6B35;--orange-bg:rgba(255,107,53,.1);
+  --r:8px;--rl:12px;
+  --f:'DM Sans',system-ui,sans-serif;
+  --m:'JetBrains Mono',monospace;
+  --sb:230px;
+}
+html{font-size:13.5px}
+body{font-family:var(--f);background:var(--bg);color:var(--tx);height:100vh;-webkit-font-smoothing:antialiased;display:flex;overflow:hidden}
+::-webkit-scrollbar{width:4px;height:4px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--bd);border-radius:2px}
+
+/* ===== SIDEBAR ===== */
+.sb{width:var(--sb);min-width:var(--sb);height:100vh;background:var(--bg2);border-right:1px solid var(--bd);display:flex;flex-direction:column;padding:16px 0;overflow-y:auto;flex-shrink:0}
+.sb-logo{padding:0 18px 16px;border-bottom:1px solid var(--bd);margin-bottom:12px}
+.sb-logo .name{font-size:.95rem;font-weight:600;letter-spacing:-.3px}
+.sb-logo .sub{color:var(--acc);font-weight:300;font-size:.65rem;text-transform:uppercase;letter-spacing:.8px;margin-top:3px}
+.sb-logo .sync-info{font-size:.62rem;color:var(--tx3);margin-top:6px;font-family:var(--m)}
+.sb-sec{padding:0 10px;margin-bottom:6px}
+.sb-lbl{font-size:.6rem;text-transform:uppercase;letter-spacing:1px;color:var(--tx3);padding:0 8px;margin-bottom:6px}
+.sb-item{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:var(--r);cursor:pointer;transition:all .12s;margin-bottom:1px;font-size:.84rem;color:var(--tx2);font-weight:400;position:relative}
+.sb-item:hover{background:var(--bg3);color:var(--tx)}
+.sb-item.act{background:var(--bg3);color:var(--tx);font-weight:500}
+.sb-item.act::before{content:'';position:absolute;left:0;top:7px;bottom:7px;width:2.5px;border-radius:0 2px 2px 0;background:var(--acc)}
+.sb-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.sb-cnt{margin-left:auto;font-size:.65rem;font-family:var(--m);color:var(--tx3);background:var(--bg);padding:1px 6px;border-radius:8px}
+.sb-cnt.al{background:var(--red-bg);color:var(--red)}
+.sb-bottom{margin-top:auto;padding:10px}
+.refresh-btn{width:100%;padding:7px;border-radius:var(--r);font-family:var(--f);font-size:.76rem;font-weight:500;cursor:pointer;border:1px solid var(--acc);background:transparent;color:var(--acc);transition:all .12s;display:flex;align-items:center;justify-content:center;gap:5px}
+.refresh-btn:hover{background:var(--acc-bg)}
+.refresh-btn.loading{opacity:.6;cursor:not-allowed}
+
+/* ===== MAIN ===== */
+.mn{flex:1;display:flex;flex-direction:column;height:100vh;overflow:hidden}
+.mn-head{padding:18px 24px 0;flex-shrink:0}
+.mn-title{font-size:1.15rem;font-weight:600;display:flex;align-items:center;gap:8px;margin-bottom:14px}
+.mn-title .dot{width:9px;height:9px;border-radius:50%}
+
+/* Tabs */
+.vtabs{display:flex;border-bottom:1px solid var(--bd);margin-bottom:0}
+.vtab{padding:8px 16px;font-size:.8rem;font-weight:500;color:var(--tx3);cursor:pointer;border-bottom:2px solid transparent;transition:all .12s;user-select:none}
+.vtab:hover{color:var(--tx)}
+.vtab.act{color:var(--tx);border-bottom-color:var(--acc)}
+
+/* Toolbar */
+.tbar{display:flex;gap:6px;padding:10px 24px;align-items:center;flex-wrap:wrap;border-bottom:1px solid var(--bd);flex-shrink:0}
+.tbar select{font-family:var(--f);font-size:.78rem;padding:5px 24px 5px 8px;background:var(--bg3);border:1px solid var(--bd);border-radius:var(--r);color:var(--tx);appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5'%3E%3Cpath d='M0 0l4 5 4-5z' fill='%235E6878'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 6px center}
+.tbar select:hover{border-color:var(--bd2)}
+.tbar .spacer{flex:1}
+.tbar .count{font-size:.72rem;color:var(--tx3);font-family:var(--m)}
+.tbar .search-wrap{position:relative}
+.tbar .search-wrap input{font-family:var(--f);font-size:.78rem;padding:5px 8px 5px 28px;background:var(--bg3);border:1px solid var(--bd);border-radius:var(--r);color:var(--tx);width:160px;outline:none}
+.tbar .search-wrap input:focus{border-color:var(--acc)}
+.tbar .search-wrap .ico{position:absolute;left:8px;top:50%;transform:translateY(-50%);color:var(--tx3);font-size:.72rem}
+
+/* Body */
+.mn-body{flex:1;overflow-y:auto;padding:0 24px 40px}
+
+/* ===== LOADING / ERROR ===== */
+.loading-state{display:flex;flex-direction:column;align-items:center;justify-content:center;height:300px;gap:12px;color:var(--tx3)}
+.spinner{width:28px;height:28px;border:2px solid var(--bd);border-top-color:var(--acc);border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.error-box{background:var(--red-bg);border:1px solid var(--red);border-radius:var(--rl);padding:16px 20px;margin-top:16px;font-size:.82rem;color:var(--red);line-height:1.6}
+.error-box strong{display:block;margin-bottom:4px}
+
+/* ===== BADGES ===== */
+.badge{display:inline-flex;align-items:center;gap:4px;padding:2px 9px;border-radius:16px;font-size:.7rem;font-weight:500;white-space:nowrap}
+.badge::before{content:'';width:5px;height:5px;border-radius:50%}
+.b-todo{background:var(--bg3);color:var(--tx3);border:1px solid var(--bd)}.b-todo::before{background:var(--tx3)}
+.b-inp{background:var(--blue-bg);color:var(--blue)}.b-inp::before{background:var(--blue)}
+.b-rev{background:var(--purple-bg);color:var(--purple)}.b-rev::before{background:var(--purple)}
+.b-done{background:var(--green-bg);color:var(--green)}.b-done::before{background:var(--green)}
+.pri{font-size:.62rem;font-weight:600;letter-spacing:.4px;text-transform:uppercase;padding:2px 7px;border-radius:3px;white-space:nowrap}
+.p-urgent{color:var(--orange);background:var(--orange-bg)}
+.p-high{color:var(--red);background:var(--red-bg)}
+.p-medium{color:var(--amber);background:var(--amber-bg)}
+.p-low{color:var(--tx3);background:var(--bg3)}
+.tag{font-size:.68rem;padding:2px 8px;border-radius:4px;white-space:nowrap;background:var(--bg3);color:var(--tx3);border:1px solid var(--bd)}
+
+/* ===== OVERVIEW CARDS ===== */
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+.kpi{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rl);padding:16px 18px}
+.kpi .label{font-size:.68rem;text-transform:uppercase;letter-spacing:.6px;color:var(--tx3);font-weight:500;margin-bottom:8px}
+.kpi .value{font-size:1.8rem;font-weight:600;font-family:var(--m);line-height:1}
+.kpi .sub{font-size:.72rem;color:var(--tx3);margin-top:5px}
+.kpi.accent{border-color:var(--acc);background:var(--acc-bg)}
+.kpi.accent .value{color:var(--acc)}
+.kpi.warn{border-color:var(--red);background:var(--red-bg)}
+.kpi.warn .value{color:var(--red)}
+.kpi.amber{border-color:var(--amber);background:var(--amber-bg)}
+.kpi.amber .value{color:var(--amber)}
+
+/* Workload section */
+.section-title{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.6px;color:var(--tx3);margin:20px 0 10px}
+.workload-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
+.wl-card{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--r);padding:12px 14px}
+.wl-name{font-size:.84rem;font-weight:600;margin-bottom:8px;color:var(--tx)}
+.wl-bars{display:flex;flex-direction:column;gap:4px}
+.wl-bar-row{display:flex;align-items:center;gap:6px;font-size:.68rem;color:var(--tx3)}
+.wl-bar-track{flex:1;height:4px;background:var(--bg4);border-radius:2px;overflow:hidden}
+.wl-bar-fill{height:100%;border-radius:2px;transition:width .4s ease}
+.wl-total{font-family:var(--m);font-size:.7rem;color:var(--tx2);margin-top:6px}
+
+/* Alert list */
+.alert-list{display:flex;flex-direction:column;gap:6px}
+.alert-item{display:flex;align-items:center;gap:10px;background:var(--bg2);border:1px solid var(--bd);border-radius:var(--r);padding:10px 14px;font-size:.8rem}
+.alert-item.overdue{border-color:var(--red)}
+.alert-item.urgent{border-color:var(--orange)}
+.alert-item.near{border-color:var(--amber)}
+.alert-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.alert-name{font-weight:500;flex:1}
+.alert-reason{font-size:.72rem;color:var(--tx3);font-family:var(--m)}
+
+/* ===== KANBAN ===== */
+.kb{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px;align-items:start}
+.kb-col{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rl);padding:12px;min-height:200px}
+.kb-hd{display:flex;align-items:center;gap:6px;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--bd)}
+.kb-hd .d{width:7px;height:7px;border-radius:50%}
+.kb-hd .t{font-size:.74rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--tx2)}
+.kb-hd .c{margin-left:auto;font-size:.64rem;font-family:var(--m);color:var(--tx3);background:var(--bg);padding:1px 6px;border-radius:8px}
+.kc{background:var(--bg3);border:1px solid var(--bd);border-radius:var(--r);padding:10px 12px;margin-bottom:6px}
+.kc-name{font-size:.8rem;font-weight:600;color:var(--tx);line-height:1.3;margin-bottom:6px}
+.kc-meta{display:flex;align-items:center;gap:4px;flex-wrap:wrap;margin-top:4px}
+.kc-pic{font-size:.7rem;color:var(--tx3);background:var(--bg);padding:1px 6px;border-radius:4px;border:1px solid var(--bd)}
+.kc-dl{font-size:.68rem;color:var(--tx3);font-family:var(--m)}
+
+/* ===== TABLE ===== */
+.tbl-wrap{overflow-x:auto;margin-top:12px}
+.tbl{width:100%;border-collapse:collapse;min-width:800px}
+.tbl th{padding:8px 10px;text-align:left;font-size:.66rem;text-transform:uppercase;letter-spacing:.7px;color:var(--tx3);font-weight:500;background:var(--bg2);border-bottom:1px solid var(--bd);white-space:nowrap;position:sticky;top:0;z-index:2}
+.tbl td{padding:7px 10px;border-bottom:1px solid var(--bd);font-size:.82rem;white-space:nowrap}
+.tbl tbody tr:hover{background:var(--bg3)}
+
+/* ===== CONFIG ===== */
+.cfg-wrap{max-width:560px;margin-top:16px}
+.cfg-box{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rl);padding:20px;margin-bottom:12px}
+.cfg-box h4{font-size:.84rem;font-weight:600;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.cfg-box p{font-size:.78rem;color:var(--tx2);line-height:1.6;margin-bottom:10px}
+.cfg-row{display:flex;gap:8px}
+.cfg-row input{flex:1;padding:7px 10px;border:1px solid var(--bd);border-radius:var(--r);background:var(--bg3);color:var(--tx);font-family:var(--f);font-size:.82rem;outline:none}
+.cfg-row input:focus{border-color:var(--acc)}
+.cfg-row button,.cfg-btn{padding:7px 14px;border:1px solid var(--acc);border-radius:var(--r);background:var(--acc);color:var(--bg);font-family:var(--f);font-size:.78rem;font-weight:600;cursor:pointer}
+.cfg-row button:hover,.cfg-btn:hover{background:var(--acc2)}
+.cfg-note{font-size:.72rem;color:var(--tx3);margin-top:8px;font-family:var(--m);background:var(--bg3);padding:8px 10px;border-radius:var(--r);line-height:1.6}
+.status-row{display:flex;align-items:center;gap:8px;margin-top:8px;font-size:.76rem}
+.status-dot{width:6px;height:6px;border-radius:50%}
+</style>
+</head>
+<body>
+
+<div class="sb" id="sidebar">
+  <div class="sb-logo">
+    <div class="name">PTG Dashboard</div>
+    <div class="sub">Live · Notion</div>
+    <div class="sync-info" id="syncInfo">Chưa đồng bộ</div>
+  </div>
+  <div class="sb-sec">
+    <div class="sb-lbl">Tổng quan</div>
+    <div class="sb-item act" onclick="nav('overview')">
+      <span class="sb-dot" style="background:var(--acc)"></span> Overview
+    </div>
+    <div class="sb-item" onclick="nav('workload')">
+      <span class="sb-dot" style="background:var(--blue)"></span> Workload
+      <span class="sb-cnt" id="cnt-overload">–</span>
+    </div>
+    <div class="sb-item" onclick="nav('alerts')">
+      <span class="sb-dot" style="background:var(--red)"></span> Alerts
+      <span class="sb-cnt al" id="cnt-alert">–</span>
+    </div>
+  </div>
+  <div class="sb-sec">
+    <div class="sb-lbl">Xem task</div>
+    <div class="sb-item" onclick="nav('kanban')">
+      <span class="sb-dot" style="background:var(--purple)"></span> Kanban
+    </div>
+    <div class="sb-item" onclick="nav('table')">
+      <span class="sb-dot" style="background:var(--amber)"></span> Table
+    </div>
+  </div>
+  <div class="sb-sec">
+    <div class="sb-lbl">Hệ thống</div>
+    <div class="sb-item" onclick="nav('config')">
+      <span class="sb-dot" style="background:var(--tx3)"></span> Cài đặt
+    </div>
+  </div>
+  <div class="sb-bottom">
+    <button class="refresh-btn" id="refreshBtn" onclick="loadData()">↻ Làm mới dữ liệu</button>
+  </div>
+</div>
+
+<div class="mn" id="main">
+  <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:12px;color:var(--tx3)">
+    <div class="spinner"></div>
+    <div style="font-size:.82rem">Đang kết nối Notion...</div>
+  </div>
+</div>
+
+<script>
+// ============================================================
+// CONFIG — thay đổi 2 dòng này nếu đổi database
+// ============================================================
+var CONFIG = {
+  token: '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',
+  dbId:  '329d7cf4b54b80a49fb0f1565fa315ce',
+  // Mapping field names (tên field trong Notion → key nội bộ)
+  // Sau khi xem schema thực tế, chỉnh các tên này cho khớp
+  fields: {
+    title:    'Name',       // hoặc 'Tên task', 'Task name', v.v.
+    status:   'Status',
+    priority: 'Priority',
+    assignee: 'Assignee',
+    deadline: 'Deadline',   // hoặc 'Due', 'Due Date', 'Ngày hết hạn'
+    tags:     'Tags',       // hoặc 'Category', 'Tag'
+  }
+};
+
+// ============================================================
+// STATE
+// ============================================================
+var state = {
+  tasks: [],
+  page: 'overview',
+  view: 'kanban',
+  loading: false,
+  error: null,
+  lastSync: null,
+  filter: { status: 'All', priority: 'All', assignee: 'All', search: '' },
+};
+
+var STATUS_CONFIG = {
+  'Not started': { cls: 'b-todo', color: '#5E6878' },
+  'To Do':       { cls: 'b-todo', color: '#5E6878' },
+  'To-do':       { cls: 'b-todo', color: '#5E6878' },
+  'In Progress': { cls: 'b-inp',  color: '#4A9EF5' },
+  'In Process':  { cls: 'b-inp',  color: '#4A9EF5' },
+  'In Review':   { cls: 'b-rev',  color: '#A78BFA' },
+  'Done':        { cls: 'b-done', color: '#3ECF8E' },
+  'Complete':    { cls: 'b-done', color: '#3ECF8E' },
+};
+var PRI_CLS = { Urgent:'p-urgent', High:'p-high', Medium:'p-medium', Low:'p-low' };
+
+// ============================================================
+// NOTION API
+// ============================================================
+async function fetchNotion(endpoint, method, body) {
+  var notionUrl = 'https://api.notion.com/v1' + endpoint;
+  // Khi deploy lên GitHub Pages / Netlify: gọi thẳng Notion API (không bị CORS)
+  // Khi mở file local (file://): dùng corsproxy.io để bypass CORS
+  var isLocal = location.protocol === 'file:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+  var fetchUrl = isLocal ? ('https://corsproxy.io/?' + encodeURIComponent(notionUrl)) : notionUrl;
+  var res = await fetch(fetchUrl, {
+    method: method || 'GET',
+    headers: {
+      'Authorization': 'Bearer ' + CONFIG.token,
+      'Notion-Version': '2022-06-28',
+      'Content-Type': 'application/json',
+    },
+    body: body ? JSON.stringify(body) : undefined,
+  });
+  if (!res.ok) {
+    var err = await res.json().catch(function() { return {}; });
+    throw new Error(err.message || 'HTTP ' + res.status);
+  }
+  return res.json();
+}
+
+async function queryDatabase(cursor) {
+  return fetchNotion('/databases/' + CONFIG.dbId + '/query', 'POST', {
+    page_size: 100,
+    start_cursor: cursor || undefined,
+  });
+}
+
+// Extract property value from Notion page properties
+function extractProp(props, fieldName) {
+  var prop = props[fieldName];
+  if (!prop) return '';
+  switch (prop.type) {
+    case 'title':
+      return (prop.title || []).map(function(t) { return t.plain_text; }).join('');
+    case 'rich_text':
+      return (prop.rich_text || []).map(function(t) { return t.plain_text; }).join('');
+    case 'select':
+      return prop.select ? prop.select.name : '';
+    case 'multi_select':
+      return (prop.multi_select || []).map(function(s) { return s.name; }).join(', ');
+    case 'status':
+      return prop.status ? prop.status.name : '';
+    case 'people':
+      return (prop.people || []).map(function(p) { return p.name || p.id; }).join(', ');
+    case 'date':
+      return prop.date ? (prop.date.start || '') : '';
+    case 'checkbox':
+      return prop.checkbox ? 'Yes' : 'No';
+    case 'number':
+      return prop.number !== null ? String(prop.number) : '';
+    case 'url':
+      return prop.url || '';
+    case 'email':
+      return prop.email || '';
+    case 'phone_number':
+      return prop.phone_number || '';
+    case 'formula':
+      var f = prop.formula;
+      if (!f) return '';
+      return f.string || f.number || f.boolean || '';
+    default:
+      return '';
+  }
+}
+
+// Auto-detect field names from first page
+function detectFields(pages) {
+  if (!pages.length) return;
+  var props = pages[0].properties;
+  var keys = Object.keys(props);
+
+  var titleKey = keys.find(function(k) { return props[k].type === 'title'; });
+  if (titleKey) CONFIG.fields.title = titleKey;
+
+  var statusKey = keys.find(function(k) {
+    return props[k].type === 'status' || (props[k].type === 'select' && /status|trạng|trang/i.test(k));
+  });
+  if (statusKey) CONFIG.fields.status = statusKey;
+
+  var priKey = keys.find(function(k) {
+    return /priority|ưu tiên|uu tien/i.test(k);
+  });
+  if (priKey) CONFIG.fields.priority = priKey;
+
+  var assigneeKey = keys.find(function(k) {
+    return props[k].type === 'people' || /assignee|pic|người|nguoi|assign/i.test(k);
+  });
+  if (assigneeKey) CONFIG.fields.assignee = assigneeKey;
+
+  var deadlineKey = keys.find(function(k) {
+    return props[k].type === 'date' || /deadline|due|hạn|han/i.test(k);
+  });
+  if (deadlineKey) CONFIG.fields.deadline = deadlineKey;
+
+  var tagsKey = keys.find(function(k) {
+    return props[k].type === 'multi_select' || /tag|category|danh mục|type/i.test(k);
+  });
+  if (tagsKey) CONFIG.fields.tags = tagsKey;
+
+  console.log('Auto-detected fields:', CONFIG.fields);
+}
+
+function parseTask(page) {
+  var p = page.properties;
+  var f = CONFIG.fields;
+  return {
+    id: page.id,
+    url: page.url,
+    title:    extractProp(p, f.title)    || '(Không có tên)',
+    status:   extractProp(p, f.status)   || 'Not started',
+    priority: extractProp(p, f.priority) || '',
+    assignee: extractProp(p, f.assignee) || '',
+    deadline: extractProp(p, f.deadline) || '',
+    tags:     extractProp(p, f.tags)     || '',
+  };
+}
+
+async function loadData() {
+  if (state.loading) return;
+  state.loading = true;
+  state.error = null;
+  document.getElementById('refreshBtn').classList.add('loading');
+  document.getElementById('refreshBtn').textContent = '⌛ Đang tải...';
+
+  try {
+    var allPages = [];
+    var cursor = undefined;
+    var rounds = 0;
+    do {
+      var data = await queryDatabase(cursor);
+      allPages = allPages.concat(data.results);
+      cursor = data.has_more ? data.next_cursor : null;
+      rounds++;
+      if (rounds > 20) break; // safety
+    } while (cursor);
+
+    detectFields(allPages);
+    state.tasks = allPages.map(parseTask);
+    state.lastSync = new Date();
+    document.getElementById('syncInfo').textContent = 'Sync: ' + state.lastSync.toLocaleTimeString('vi-VN');
+    updateSidebarCounts();
+    renderPage();
+  } catch (e) {
+    state.error = e.message;
+    renderError(e.message);
+    console.error(e);
+  } finally {
+    state.loading = false;
+    document.getElementById('refreshBtn').classList.remove('loading');
+    document.getElementById('refreshBtn').textContent = '↻ Làm mới dữ liệu';
+  }
+}
+
+// ============================================================
+// HELPERS
+// ============================================================
+function E(s) { return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+function badge(status) {
+  var cfg = STATUS_CONFIG[status] || { cls: 'b-todo', color: '#5E6878' };
+  return '<span class="badge ' + cfg.cls + '">' + E(status || 'Unknown') + '</span>';
+}
+
+function priTag(p) {
+  var cls = PRI_CLS[p] || 'p-low';
+  return p ? '<span class="pri ' + cls + '">' + E(p) + '</span>' : '';
+}
+
+function daysLeft(dl) {
+  if (!dl) return null;
+  var today = new Date(); today.setHours(0,0,0,0);
+  var d = new Date(dl + 'T00:00:00');
+  return Math.ceil((d - today) / 86400000);
+}
+
+function dlLabel(dl) {
+  if (!dl) return '<span style="color:var(--tx3)">–</span>';
+  var n = daysLeft(dl);
+  var color = n < 0 ? 'var(--red)' : n <= 7 ? 'var(--amber)' : 'var(--tx3)';
+  return '<span style="color:' + color + ';font-family:var(--m);font-size:.72rem">' + E(dl) + (n < 0 ? ' (' + Math.abs(n) + 'd quá hạn)' : n <= 7 ? ' (' + n + 'd còn)' : '') + '</span>';
+}
+
+function getAlerts(tasks) {
+  var today = new Date(); today.setHours(0,0,0,0);
+  var al = [];
+  tasks.forEach(function(t) {
+    if (/done|complete/i.test(t.status)) return;
+    if (/urgent/i.test(t.priority)) { al.push({ task: t, type: 'u', reason: 'Urgent' }); return; }
+    if (!t.deadline) return;
+    var n = daysLeft(t.deadline);
+    if (n < 0) al.push({ task: t, type: 'o', reason: 'Quá hạn ' + Math.abs(n) + ' ngày' });
+    else if (n <= 7) al.push({ task: t, type: 'n', reason: 'Còn ' + n + ' ngày' });
+  });
+  al.sort(function(a, b) { return ({o:0,u:1,n:2}[a.type]||9) - ({o:0,u:1,n:2}[b.type]||9); });
+  return al;
+}
+
+function filtered() {
+  var f = state.filter;
+  return state.tasks.filter(function(t) {
+    if (f.status !== 'All' && t.status !== f.status) return false;
+    if (f.priority !== 'All' && t.priority !== f.priority) return false;
+    if (f.assignee !== 'All' && t.assignee !== f.assignee) return false;
+    if (f.search && !t.title.toLowerCase().includes(f.search.toLowerCase()) && !t.assignee.toLowerCase().includes(f.search.toLowerCase())) return false;
+    return true;
+  });
+}
+
+function uniq(key) {
+  var s = new Set();
+  state.tasks.forEach(function(t) { if (t[key]) t[key].split(', ').forEach(function(v) { s.add(v.trim()); }); });
+  return Array.from(s).sort();
+}
+
+function updateSidebarCounts() {
+  var alerts = getAlerts(state.tasks);
+  document.getElementById('cnt-alert').textContent = alerts.length || '0';
+  var assignees = uniq('assignee');
+  var overloaded = assignees.filter(function(a) {
+    return state.tasks.filter(function(t) { return t.assignee.includes(a) && !/done|complete/i.test(t.status); }).length >= 5;
+  });
+  document.getElementById('cnt-overload').textContent = overloaded.length || '0';
+}
+
+// ============================================================
+// NAVIGATION
+// ============================================================
+function nav(page) {
+  state.page = page;
+  document.querySelectorAll('.sb-item').forEach(function(el) { el.classList.remove('act'); });
+  var items = document.querySelectorAll('.sb-item');
+  var map = { overview:0, workload:1, alerts:2, kanban:3, table:4, config:5 };
+  if (items[map[page]]) items[map[page]].classList.add('act');
+  renderPage();
+}
+
+function renderPage() {
+  if (state.tasks.length === 0 && !state.error) {
+    renderEmpty();
+    return;
+  }
+  if (state.error) { return; }
+  switch (state.page) {
+    case 'overview':  renderOverview(); break;
+    case 'workload':  renderWorkload(); break;
+    case 'alerts':    renderAlerts(); break;
+    case 'kanban':    renderKanban(); break;
+    case 'table':     renderTable(); break;
+    case 'config':    renderConfig(); break;
+    default:          renderOverview();
+  }
+}
+
+function setMain(html) {
+  document.getElementById('main').innerHTML = html;
+}
+
+function renderError(msg) {
+  setMain('<div style="padding:24px"><div class="error-box"><strong>⚠ Không kết nối được Notion</strong>' + E(msg) + '<br><br>Kiểm tra: token còn hiệu lực, database đã được share cho integration chưa.</div></div>');
+}
+
+function renderEmpty() {
+  setMain('<div class="loading-state"><div style="font-size:2rem">📭</div><div style="font-size:.88rem">Chưa có dữ liệu. Nhấn "Làm mới dữ liệu" để load từ Notion.</div></div>');
+}
+
+// ============================================================
+// OVERVIEW
+// ============================================================
+function renderOverview() {
+  var tasks = state.tasks;
+  var total = tasks.length;
+  var done = tasks.filter(function(t) { return /done|complete/i.test(t.status); }).length;
+  var active = tasks.filter(function(t) { return /in progress|in process/i.test(t.status); }).length;
+  var alerts = getAlerts(tasks);
+  var overdue = alerts.filter(function(a) { return a.type === 'o'; }).length;
+
+  // Status distribution bar
+  var statuses = {};
+  tasks.forEach(function(t) { statuses[t.status] = (statuses[t.status] || 0) + 1; });
+
+  var html = '<div class="mn-head">';
+  html += '<div class="mn-title"><span class="dot" style="background:var(--acc)"></span>Overview</div>';
+  html += '</div><div class="mn-body">';
+
+  // KPI
+  html += '<div class="kpi-grid">';
+  html += '<div class="kpi accent"><div class="label">Tổng task</div><div class="value">' + total + '</div><div class="sub">Trong database</div></div>';
+  html += '<div class="kpi"><div class="label">Đang làm</div><div class="value" style="color:var(--blue)">' + active + '</div><div class="sub">In Progress</div></div>';
+  html += '<div class="kpi"><div class="label">Hoàn thành</div><div class="value" style="color:var(--green)">' + done + '</div><div class="sub">' + (total ? Math.round(done/total*100) : 0) + '% tổng số</div></div>';
+  html += '<div class="kpi ' + (overdue > 0 ? 'warn' : '') + '"><div class="label">Cần xử lý</div><div class="value">' + alerts.length + '</div><div class="sub">' + overdue + ' quá hạn</div></div>';
+  html += '</div>';
+
+  // Status breakdown
+  html += '<div class="section-title">Phân bổ theo trạng thái</div>';
+  html += '<div style="display:flex;gap:8px;flex-wrap:wrap">';
+  Object.keys(statuses).forEach(function(s) {
+    var cfg = STATUS_CONFIG[s] || { color: '#5E6878' };
+    var pct = total ? Math.round(statuses[s] / total * 100) : 0;
+    html += '<div style="background:var(--bg2);border:1px solid var(--bd);border-radius:var(--r);padding:10px 14px;min-width:130px">';
+    html += '<div style="font-size:.68rem;color:var(--tx3);margin-bottom:4px">' + E(s) + '</div>';
+    html += '<div style="font-size:1.4rem;font-weight:600;font-family:var(--m);color:' + cfg.color + '">' + statuses[s] + '</div>';
+    html += '<div style="font-size:.68rem;color:var(--tx3);margin-top:3px">' + pct + '%</div>';
+    html += '</div>';
+  });
+  html += '</div>';
+
+  // Recent alerts preview
+  if (alerts.length) {
+    html += '<div class="section-title">⚠ Cần chú ý (' + alerts.length + ')</div>';
+    html += '<div class="alert-list">';
+    alerts.slice(0, 5).forEach(function(a) {
+      var t = a.task;
+      var cls = a.type === 'o' ? 'overdue' : a.type === 'u' ? 'urgent' : 'near';
+      var dotColor = a.type === 'o' ? 'var(--red)' : a.type === 'u' ? 'var(--orange)' : 'var(--amber)';
+      html += '<div class="alert-item ' + cls + '">';
+      html += '<span class="alert-dot" style="background:' + dotColor + '"></span>';
+      html += '<span class="alert-name">' + E(t.title) + '</span>';
+      if (t.assignee) html += '<span class="kc-pic">' + E(t.assignee) + '</span>';
+      html += '<span class="alert-reason">' + E(a.reason) + '</span>';
+      html += '</div>';
+    });
+    if (alerts.length > 5) html += '<div style="font-size:.72rem;color:var(--tx3);padding:4px 0">+ ' + (alerts.length-5) + ' cảnh báo khác — xem tab Alerts</div>';
+    html += '</div>';
+  }
+
+  html += '</div>';
+  setMain(html);
+}
+
+// ============================================================
+// WORKLOAD
+// ============================================================
+function renderWorkload() {
+  var tasks = state.tasks;
+  var assignees = uniq('assignee').filter(Boolean);
+
+  var html = '<div class="mn-head"><div class="mn-title"><span class="dot" style="background:var(--blue)"></span>Workload</div></div>';
+  html += '<div class="mn-body">';
+
+  if (!assignees.length) {
+    html += '<div class="loading-state">Không tìm thấy Assignee nào. Kiểm tra lại field mapping trong Cài đặt.</div>';
+    html += '</div>'; setMain(html); return;
+  }
+
+  var statusList = Object.keys(STATUS_CONFIG).filter(function(s,i,a) { return a.indexOf(s) === i; });
+
+  html += '<div class="workload-grid">';
+  assignees.forEach(function(a) {
+    var myTasks = tasks.filter(function(t) { return t.assignee.includes(a); });
+    var active = myTasks.filter(function(t) { return !/done|complete/i.test(t.status); }).length;
+    var done = myTasks.filter(function(t) { return /done|complete/i.test(t.status); }).length;
+    var urgent = myTasks.filter(function(t) { return /urgent/i.test(t.priority); }).length;
+    var overloaded = active >= 5;
+
+    html += '<div class="wl-card" style="' + (overloaded ? 'border-color:var(--red)' : '') + '">';
+    html += '<div class="wl-name">' + E(a) + (overloaded ? ' <span style="color:var(--red);font-size:.62rem">⚠ Overload</span>' : '') + '</div>';
+    html += '<div class="wl-bars">';
+    html += '<div class="wl-bar-row"><span style="min-width:52px">Active</span><div class="wl-bar-track"><div class="wl-bar-fill" style="width:' + Math.min(active*10,100) + '%;background:var(--blue)"></div></div><span>' + active + '</span></div>';
+    html += '<div class="wl-bar-row"><span style="min-width:52px">Done</span><div class="wl-bar-track"><div class="wl-bar-fill" style="width:' + (myTasks.length ? Math.round(done/myTasks.length*100) : 0) + '%;background:var(--green)"></div></div><span>' + done + '</span></div>';
+    if (urgent) html += '<div class="wl-bar-row"><span style="min-width:52px">Urgent</span><div class="wl-bar-track"><div class="wl-bar-fill" style="width:' + Math.min(urgent*20,100) + '%;background:var(--orange)"></div></div><span>' + urgent + '</span></div>';
+    html += '</div>';
+    html += '<div class="wl-total">' + myTasks.length + ' task tổng</div>';
+    html += '</div>';
+  });
+  html += '</div>';
+  html += '</div>';
+  setMain(html);
+}
+
+// ============================================================
+// ALERTS
+// ============================================================
+function renderAlerts() {
+  var alerts = getAlerts(state.tasks);
+  var html = '<div class="mn-head"><div class="mn-title"><span class="dot" style="background:var(--red)"></span>Alerts <span style="font-size:.8rem;color:var(--tx3);font-weight:400">(' + alerts.length + ')</span></div></div>';
+  html += '<div class="mn-body">';
+
+  if (!alerts.length) {
+    html += '<div class="loading-state"><div style="font-size:1.5rem">✅</div><div>Không có cảnh báo nào!</div></div>';
+    html += '</div>'; setMain(html); return;
+  }
+
+  ['o','u','n'].forEach(function(type) {
+    var group = alerts.filter(function(a) { return a.type === type; });
+    if (!group.length) return;
+    var label = type === 'o' ? '🔴 Quá hạn' : type === 'u' ? '🟠 Urgent' : '🟡 Sắp đến hạn';
+    html += '<div class="section-title">' + label + ' (' + group.length + ')</div>';
+    html += '<div class="alert-list">';
+    group.forEach(function(a) {
+      var t = a.task;
+      var cls = type === 'o' ? 'overdue' : type === 'u' ? 'urgent' : 'near';
+      var dotColor = type === 'o' ? 'var(--red)' : type === 'u' ? 'var(--orange)' : 'var(--amber)';
+      html += '<div class="alert-item ' + cls + '" style="cursor:pointer" onclick="window.open(\'' + E(t.url) + '\',\'_blank\')">';
+      html += '<span class="alert-dot" style="background:' + dotColor + '"></span>';
+      html += '<span class="alert-name">' + E(t.title) + '</span>';
+      html += badge(t.status);
+      if (t.assignee) html += '<span class="kc-pic">' + E(t.assignee) + '</span>';
+      if (t.priority) html += priTag(t.priority);
+      html += '<span class="alert-reason">' + E(a.reason) + '</span>';
+      html += '</div>';
+    });
+    html += '</div>';
+  });
+
+  html += '</div>';
+  setMain(html);
+}
+
+// ============================================================
+// KANBAN
+// ============================================================
+function renderKanban() {
+  var tasks = filtered();
+  var statuses = ['Not started','To Do','In Progress','In Process','In Review','Done'];
+  // Only show statuses that exist in data
+  var existing = [];
+  var seen = {};
+  state.tasks.forEach(function(t) { if (!seen[t.status]) { seen[t.status] = true; existing.push(t.status); } });
+  // Canonical order
+  var ordered = statuses.filter(function(s) { return seen[s]; });
+  var others = existing.filter(function(s) { return statuses.indexOf(s) === -1; });
+  ordered = ordered.concat(others);
+
+  var html = buildToolbar('kanban');
+  html += '<div class="mn-body"><div class="kb" style="grid-template-columns:repeat(' + Math.max(ordered.length,1) + ',1fr)">';
+
+  ordered.forEach(function(s) {
+    var col = tasks.filter(function(t) { return t.status === s; });
+    var cfg = STATUS_CONFIG[s] || { color: '#5E6878' };
+    html += '<div class="kb-col"><div class="kb-hd">';
+    html += '<span class="d" style="background:' + cfg.color + '"></span>';
+    html += '<span class="t">' + E(s) + '</span>';
+    html += '<span class="c">' + col.length + '</span>';
+    html += '</div><div>';
+    col.forEach(function(t) {
+      html += '<div class="kc" onclick="window.open(\'' + E(t.url) + '\',\'_blank\')" style="cursor:pointer">';
+      html += '<div class="kc-name">' + E(t.title) + '</div>';
+      html += '<div class="kc-meta">';
+      if (t.priority) html += priTag(t.priority);
+      if (t.assignee) html += '<span class="kc-pic">' + E(t.assignee.split(', ')[0]) + '</span>';
+      if (t.tags) html += '<span class="tag">' + E(t.tags.split(', ')[0]) + '</span>';
+      html += '</div>';
+      if (t.deadline) html += '<div class="kc-dl" style="margin-top:5px">' + dlLabel(t.deadline) + '</div>';
+      html += '</div>';
+    });
+    html += '</div></div>';
+  });
+
+  html += '</div></div>';
+  setMain(html);
+}
+
+// ============================================================
+// TABLE
+// ============================================================
+function renderTable() {
+  var tasks = filtered();
+  var html = buildToolbar('table');
+  html += '<div class="mn-body"><div class="tbl-wrap"><table class="tbl"><thead><tr>';
+  ['Tên task','Trạng thái','Ưu tiên','Assignee','Deadline','Tags'].forEach(function(h) {
+    html += '<th>' + h + '</th>';
+  });
+  html += '</tr></thead><tbody>';
+  tasks.forEach(function(t) {
+    html += '<tr onclick="window.open(\'' + E(t.url) + '\',\'_blank\')" style="cursor:pointer">';
+    html += '<td style="max-width:300px;overflow:hidden;text-overflow:ellipsis">' + E(t.title) + '</td>';
+    html += '<td>' + badge(t.status) + '</td>';
+    html += '<td>' + (t.priority ? priTag(t.priority) : '–') + '</td>';
+    html += '<td>' + (t.assignee ? '<span class="kc-pic">' + E(t.assignee) + '</span>' : '–') + '</td>';
+    html += '<td>' + dlLabel(t.deadline) + '</td>';
+    html += '<td>' + (t.tags ? '<span class="tag">' + E(t.tags) + '</span>' : '–') + '</td>';
+    html += '</tr>';
+  });
+  html += '</tbody></table></div></div>';
+  setMain(html);
+}
+
+// ============================================================
+// TOOLBAR
+// ============================================================
+function buildToolbar(activeView) {
+  var statuses = ['All'].concat(uniq('status'));
+  var priorities = ['All'].concat(uniq('priority'));
+  var assignees = ['All'].concat(uniq('assignee'));
+  var f = state.filter;
+
+  var html = '<div class="mn-head"><div class="mn-title"><span class="dot" style="background:var(--' + (activeView==='kanban'?'purple':'amber') + ')"></span>' + (activeView==='kanban'?'Kanban':'Table') + '</div>';
+  html += '<div class="vtabs">';
+  html += '<div class="vtab ' + (activeView==='kanban'?'act':'') + '" onclick="nav(\'kanban\')">Kanban</div>';
+  html += '<div class="vtab ' + (activeView==='table'?'act':'') + '" onclick="nav(\'table\')">Table</div>';
+  html += '</div></div>';
+
+  html += '<div class="tbar">';
+  html += '<div class="search-wrap"><span class="ico">🔍</span><input placeholder="Tìm task..." value="' + E(f.search) + '" oninput="state.filter.search=this.value;renderPage()" /></div>';
+  html += buildSelect('Status', statuses, f.status, 'state.filter.status=this.value;renderPage()');
+  html += buildSelect('Priority', priorities, f.priority, 'state.filter.priority=this.value;renderPage()');
+  html += buildSelect('Assignee', assignees, f.assignee, 'state.filter.assignee=this.value;renderPage()');
+  html += '<div class="spacer"></div>';
+  html += '<span class="count">' + filtered().length + ' task</span>';
+  html += '</div>';
+  return html;
+}
+
+function buildSelect(label, opts, cur, onchange) {
+  var html = '<select onchange="' + onchange + '">';
+  opts.forEach(function(o) {
+    html += '<option' + (o === cur ? ' selected' : '') + '>' + E(o === 'All' ? label + ': All' : o) + '</option>';
+  });
+  return html + '</select>';
+}
+
+// ============================================================
+// CONFIG
+// ============================================================
+function renderConfig() {
+  var html = '<div class="mn-head"><div class="mn-title"><span class="dot" style="background:var(--tx3)"></span>Cài đặt & Kết nối</div></div>';
+  html += '<div class="mn-body"><div class="cfg-wrap">';
+
+  html += '<div class="cfg-box">';
+  html += '<h4>🔗 Notion Integration Token</h4>';
+  html += '<p>Token dùng để kết nối dashboard với Notion database của bạn.</p>';
+  html += '<div class="cfg-row"><input id="cfgToken" type="password" value="' + E(CONFIG.token) + '" placeholder="ntn_..."/><button onclick="CONFIG.token=document.getElementById(\'cfgToken\').value.trim();loadData()">Lưu & Reload</button></div>';
+  html += '</div>';
+
+  html += '<div class="cfg-box">';
+  html += '<h4>🗄 Database ID</h4>';
+  html += '<p>ID của Notion database cần hiển thị. Lấy từ URL: notion.so/<strong>[database-id]</strong></p>';
+  html += '<div class="cfg-row"><input id="cfgDb" value="' + E(CONFIG.dbId) + '" placeholder="329d7cf4..."/><button onclick="CONFIG.dbId=document.getElementById(\'cfgDb\').value.trim();loadData()">Lưu & Reload</button></div>';
+  html += '</div>';
+
+  html += '<div class="cfg-box">';
+  html += '<h4>🏷 Field Mapping (auto-detected)</h4>';
+  html += '<p>Dashboard tự động nhận diện tên field. Nếu sai, chỉnh tay tại đây:</p>';
+  var fieldLabels = { title:'Tên task (Title)', status:'Trạng thái (Status)', priority:'Ưu tiên (Priority)', assignee:'Người phụ trách (Assignee)', deadline:'Deadline', tags:'Tags / Category' };
+  Object.keys(CONFIG.fields).forEach(function(k) {
+    html += '<div class="cfg-row" style="margin-bottom:6px"><span style="font-size:.72rem;color:var(--tx3);min-width:160px">' + fieldLabels[k] + '</span>';
+    html += '<input id="field_' + k + '" value="' + E(CONFIG.fields[k]) + '" style="flex:1"/></div>';
+  });
+  html += '<button class="cfg-btn" onclick="Object.keys(CONFIG.fields).forEach(function(k){CONFIG.fields[k]=document.getElementById(\'field_\'+k).value.trim()});loadData()">Áp dụng & Reload</button>';
+  html += '</div>';
+
+  if (state.lastSync) {
+    html += '<div class="cfg-box">';
+    html += '<h4>📊 Trạng thái hiện tại</h4>';
+    html += '<div class="status-row"><span class="status-dot" style="background:var(--green)"></span>Kết nối thành công · ' + state.tasks.length + ' task đã load</div>';
+    html += '<div style="font-size:.72rem;color:var(--tx3);margin-top:6px;font-family:var(--m)">Sync lần cuối: ' + state.lastSync.toLocaleString('vi-VN') + '</div>';
+    html += '</div>';
+  }
+
+  html += '<div class="cfg-note">💡 Deploy file HTML này lên GitHub Pages hoặc Netlify để share link cho cả team. Dashboard sẽ tự gọi Notion API mỗi lần mở — không cần server, không cần đăng nhập thêm.</div>';
+  html += '</div></div>';
+  setMain(html);
+}
+
+// ============================================================
+// INIT
+// ============================================================
+loadData();
+</script>
+</body>
+</html>
