@@ -11,7 +11,7 @@ const DATABASE_ID = process.env.NOTION_DATABASE_ID;
 if (!DATABASE_ID) {
   console.error("❌ NOTION_DATABASE_ID chưa được set trong GitHub Secrets");
   process.exit(1);
-}
+// }
 
 // Map Notion property → object gọn
 function mapPage(page) {
@@ -35,7 +35,7 @@ function mapPage(page) {
     date_start: p["Date"]?.date?.start ?? null,
     date_end:   p["Date"]?.date?.end   ?? null,
     done:       p["Checkbox"]?.checkbox ?? false,
-    status: p["Status"]?.select?.name ?? null,
+    status:     p["Status"]?.select?.name ?? null,
     url:        page.url,
   };
 }
