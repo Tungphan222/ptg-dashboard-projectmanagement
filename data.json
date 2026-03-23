@@ -1,6 +1,6 @@
 {
-  "synced_at": "2026-03-23T09:35:11.413Z",
-  "count": 124,
+  "synced_at": "2026-03-23T10:14:01.482Z",
+  "count": 125,
   "tasks": [
     {
       "id": "329d7cf4-b54b-81b4-945b-c4ab58b56722",
@@ -12,6 +12,7 @@
       "date_start": "2026-12-25",
       "date_end": "2026-12-25",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/Haegin-off-ngh-gi-ng-sinh-329d7cf4b54b81b4945bc4ab58b56722"
     },
     {
@@ -24,6 +25,7 @@
       "date_start": "2026-10-09",
       "date_end": "2026-10-09",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/Haegin-off-ngh-ng-y-Hangeul-329d7cf4b54b81dc86ffe72465d187d8"
     },
     {
@@ -36,6 +38,7 @@
       "date_start": "2026-10-05",
       "date_end": "2026-10-05",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/Haegin-off-ngh-b-L-khai-thi-n-329d7cf4b54b817dace1f42f06ca2c43"
     },
     {
@@ -48,6 +51,7 @@
       "date_start": "2026-09-24",
       "date_end": "2026-09-27",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/Haegin-off-ngh-T-t-trung-thu-329d7cf4b54b81fda569d2ae71e7bb67"
     },
     {
@@ -60,6 +64,7 @@
       "date_start": "2026-09-23",
       "date_end": "2026-09-23",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/Haegin-off-ngh-t-13h-chi-u-gmt-7-329d7cf4b54b81f9b29ce354f8600ef2"
     },
     {
@@ -72,6 +77,7 @@
       "date_start": "2026-09-09",
       "date_end": "2026-09-09",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/VNG-off-Sinh-nh-t-VNG-21-1-329d7cf4b54b812eaafaed5231e17245"
     },
     {
@@ -84,6 +90,7 @@
       "date_start": "2026-09-01",
       "date_end": "2026-09-02",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/VNG-off-Ng-y-2-9-329d7cf4b54b810397f3f10f224415b3"
     },
     {
@@ -96,6 +103,7 @@
       "date_start": "2026-08-17",
       "date_end": "2026-08-17",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/Haegin-off-Ngh-b-ng-y-15-8-329d7cf4b54b81a19a19da7e1bfb1961"
     },
     {
@@ -108,6 +116,7 @@
       "date_start": "2026-07-17",
       "date_end": "2026-07-17",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/Haegin-off-Ng-y-Hi-n-ph-p-H-n-Qu-c-329d7cf4b54b810f9341d0dfa1b6dd1b"
     },
     {
@@ -120,6 +129,7 @@
       "date_start": "2026-06-03",
       "date_end": "2026-06-03",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/Haegin-off-Ng-y-b-u-c-329d7cf4b54b8149ada2db83747634c6"
     },
     {
@@ -132,6 +142,7 @@
       "date_start": "2026-05-28",
       "date_end": "2026-05-28",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/2-27-Mini-Update-329d7cf4b54b81639a47c04a7be9ae1a"
     },
     {
@@ -144,6 +155,7 @@
       "date_start": "2026-05-25",
       "date_end": "2026-05-25",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/Haegin-off-L-Ph-t-n-H-n-Qu-c-329d7cf4b54b81dba10aeef65a4e363c"
     },
     {
@@ -156,6 +168,7 @@
       "date_start": "2026-05-14",
       "date_end": "2026-05-14",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/Update-2-27-0-329d7cf4b54b816bb2bcc51522119053"
     },
     {
@@ -168,6 +181,7 @@
       "date_start": "2026-05-11",
       "date_end": "2026-05-11",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-27-Final-Build-D-3-329d7cf4b54b814b9d58e4e7a9b648e7"
     },
     {
@@ -180,6 +194,7 @@
       "date_start": "2026-05-11",
       "date_end": "2026-05-11",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-27-Image-Source-HAEGIN-PRD-MKT-D-3-329d7cf4b54b81dd8a65c14fc0e4ea43"
     },
     {
@@ -192,6 +207,7 @@
       "date_start": "2026-05-08",
       "date_end": "2026-05-08",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/Gameverse-Trao-gi-i-329d7cf4b54b81518b41d415c52e2af1"
     },
     {
@@ -204,6 +220,7 @@
       "date_start": "2026-05-08",
       "date_end": "2026-05-08",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/Gameverse-Trao-gi-i-329d7cf4b54b81c0a076c1584c8a7393"
     },
     {
@@ -216,6 +233,7 @@
       "date_start": "2026-05-07",
       "date_end": "2026-05-07",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/Gameverse-Offline-329d7cf4b54b814ba177c84dd77afa7b"
     },
     {
@@ -228,6 +246,7 @@
       "date_start": "2026-05-06",
       "date_end": "2026-05-06",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-27-QA-Build-D-8-329d7cf4b54b817b89f0cfa16fb97e41"
     },
     {
@@ -240,6 +259,7 @@
       "date_start": "2026-05-06",
       "date_end": "2026-05-06",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-27-PPT-HAEGIN-VNG-D-8-329d7cf4b54b81da823fcdc853c47ee0"
     },
     {
@@ -252,6 +272,7 @@
       "date_start": "2026-05-06",
       "date_end": "2026-05-06",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-27-Product-ID-List-ng-k-VNG-HAEGIN-D-8-329d7cf4b54b81ea981deed7396bec93"
     },
     {
@@ -264,6 +285,7 @@
       "date_start": "2026-05-05",
       "date_end": "2026-05-05",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-27-What-s-new-PRD-MKT-D-9-329d7cf4b54b81b9a990ef9425801445"
     },
     {
@@ -276,6 +298,7 @@
       "date_start": "2026-05-05",
       "date_end": "2026-05-05",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/Haegin-off-Ng-y-Thi-u-Nhi-329d7cf4b54b8175a67aca583f60a459"
     },
     {
@@ -288,6 +311,7 @@
       "date_start": "2026-05-04",
       "date_end": "2026-05-04",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-27-ItemID-Action-Key-329d7cf4b54b811c83ffd8ad943e8442"
     },
     {
@@ -300,6 +324,7 @@
       "date_start": "2026-05-04",
       "date_end": "2026-05-04",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-27-What-s-new-PRD-MKT-329d7cf4b54b8169b7c9dc9d9176ba0f"
     },
     {
@@ -312,6 +337,7 @@
       "date_start": "2026-05-04",
       "date_end": "2026-05-04",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-27-Sale-Schedule-D-10-329d7cf4b54b81b49f29fd8b62f545be"
     },
     {
@@ -324,6 +350,7 @@
       "date_start": "2026-05-01",
       "date_end": "2026-05-01",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/Haegin-VNG-off-Qu-c-t-lao-ng-329d7cf4b54b815ab4c0d3e424416e86"
     },
     {
@@ -336,6 +363,7 @@
       "date_start": "2026-04-30",
       "date_end": "2026-04-30",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/VNG-off-Ng-y-30-4-329d7cf4b54b81098fd4e454bab53e71"
     },
     {
@@ -348,6 +376,7 @@
       "date_start": "2026-04-30",
       "date_end": "2026-04-30",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/VNG-off-Ng-y-30-4-329d7cf4b54b8190a244e33af3b38833"
     },
     {
@@ -360,6 +389,7 @@
       "date_start": "2026-04-29",
       "date_end": "2026-04-29",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/2-26-Mini-Update-329d7cf4b54b8107a907d6567f036a3e"
     },
     {
@@ -372,6 +402,7 @@
       "date_start": "2026-04-25",
       "date_end": "2026-04-25",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-26-Ra-m-t-03-trang-ph-c-San-Louis-329d7cf4b54b81219e41db5468619bfa"
     },
     {
@@ -384,6 +415,7 @@
       "date_start": "2026-04-25",
       "date_end": "2026-04-27",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/VNG-off-Gi-t-H-ng-V-ng-329d7cf4b54b815b9fe1dca726b60df0"
     },
     {
@@ -396,6 +428,7 @@
       "date_start": "2026-04-21",
       "date_end": "2026-04-24",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/VNG-off-Team-Building-GS9-329d7cf4b54b8159b9f3d8d6d904b632"
     },
     {
@@ -408,6 +441,7 @@
       "date_start": "2026-04-16",
       "date_end": "2026-04-16",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/Update-2-26-0-329d7cf4b54b81c486acebba0559f100"
     },
     {
@@ -420,6 +454,7 @@
       "date_start": "2026-04-13",
       "date_end": "2026-04-13",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-26-Image-Source-HAEGIN-PRD-MKT-D-3-329d7cf4b54b810ab810d4f6b3df9101"
     },
     {
@@ -432,6 +467,7 @@
       "date_start": "2026-04-13",
       "date_end": "2026-04-13",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-26-Final-Build-D-3-329d7cf4b54b81f5b167c8d321a34b2c"
     },
     {
@@ -444,6 +480,7 @@
       "date_start": "2026-04-08",
       "date_end": "2026-04-08",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-26-Image-Source-Cu-n-chi-u-l-n-1-329d7cf4b54b811ea46fcd7e68ac71fd"
     },
     {
@@ -456,6 +493,7 @@
       "date_start": "2026-04-08",
       "date_end": "2026-04-08",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-26-QA-Build-D-8-329d7cf4b54b81408a83cbb1b724d8d2"
     },
     {
@@ -468,6 +506,7 @@
       "date_start": "2026-04-08",
       "date_end": "2026-04-08",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-26-PPT-HAEGIN-VNG-D-8-329d7cf4b54b81da9404d80abefa2dea"
     },
     {
@@ -480,6 +519,7 @@
       "date_start": "2026-04-08",
       "date_end": "2026-04-08",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-26-Product-ID-List-ng-k-VNG-HAEGIN-D-8-329d7cf4b54b8103b614cc02fd41a23d"
     },
     {
@@ -492,6 +532,7 @@
       "date_start": "2026-04-08",
       "date_end": "2026-04-08",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-26-What-s-new-PRD-MKT-D-8-329d7cf4b54b818ab94ce44e761735f0"
     },
     {
@@ -504,6 +545,7 @@
       "date_start": "2026-04-07",
       "date_end": "2026-04-21",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/Gameverse-Chung-k-t-329d7cf4b54b814b86a3c8d2f7358d77"
     },
     {
@@ -516,6 +558,7 @@
       "date_start": "2026-04-07",
       "date_end": "2026-04-07",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-26-What-s-new-PRD-MKT-329d7cf4b54b8199af6cfd77405640e0"
     },
     {
@@ -528,6 +571,7 @@
       "date_start": "2026-04-07",
       "date_end": "2026-04-07",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-26-Sale-Schedule-D-9-329d7cf4b54b81a78136d3132908d759"
     },
     {
@@ -540,6 +584,7 @@
       "date_start": "2026-04-07",
       "date_end": "2026-04-07",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-26-ItemID-Action-Key-329d7cf4b54b81e79755d755482eb992"
     },
     {
@@ -552,6 +597,7 @@
       "date_start": "2026-04-06",
       "date_end": "2026-04-06",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/Event-Elemental-Fantasy-C-ng-b-gi-i-329d7cf4b54b819d8ef9f4604a43909f"
     },
     {
@@ -564,6 +610,7 @@
       "date_start": "2026-04-04",
       "date_end": "2026-04-16",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/task-t-ng-performance-PTG-329d7cf4b54b819da3f6ca4ba239f065"
     },
     {
@@ -576,6 +623,7 @@
       "date_start": "2026-04-02",
       "date_end": "2026-04-24",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/Review-k-ho-ch-smile-329d7cf4b54b81cdb1a6c94bb89524a1"
     },
     {
@@ -588,7 +636,21 @@
       "date_start": "2026-04-02",
       "date_end": "2026-04-02",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/2-25-Mini-Update-329d7cf4b54b81ff8f55db76b66e5f1e"
+    },
+    {
+      "id": "32cd7cf4-b54b-81a0-9740-cded3b45bf0d",
+      "name": "Đi ăn với Haegin",
+      "type": "CHUẨN BỊ",
+      "company": "",
+      "pic": "Lisa, Phượng",
+      "version": "",
+      "date_start": "2026-03-27",
+      "date_end": "2026-03-28",
+      "done": false,
+      "status": "In Progress",
+      "url": "https://www.notion.so/i-n-v-i-Haegin-32cd7cf4b54b81a09740cded3b45bf0d"
     },
     {
       "id": "32cd7cf4-b54b-817c-b902-cc7189178dc5",
@@ -600,6 +662,7 @@
       "date_start": "2026-03-26",
       "date_end": "2026-03-27",
       "done": false,
+      "status": "In Progress",
       "url": "https://www.notion.so/Meeting-v-i-Haegin-32cd7cf4b54b817cb902cc7189178dc5"
     },
     {
@@ -612,6 +675,7 @@
       "date_start": "2026-03-23",
       "date_end": "2026-03-30",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/Event-Elemental-Fantasy-User-vote-329d7cf4b54b8159ad06d12cebcb91d2"
     },
     {
@@ -624,6 +688,7 @@
       "date_start": "2026-03-19",
       "date_end": "2026-03-19",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/Update-2-25-0-329d7cf4b54b8100aaadd975de9a3f2c"
     },
     {
@@ -636,6 +701,7 @@
       "date_start": "2026-03-16",
       "date_end": "2026-03-16",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/G-i-PUM-T2-2026-cho-Haegin-329d7cf4b54b813c901dd9e2275520d9"
     },
     {
@@ -648,6 +714,7 @@
       "date_start": "2026-03-16",
       "date_end": "2026-03-16",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-25-Final-Build-D-3-329d7cf4b54b8134a72dd8ae974d9727"
     },
     {
@@ -660,6 +727,7 @@
       "date_start": "2026-03-16",
       "date_end": "2026-03-16",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-25-Image-Source-HAEGIN-PRD-MKT-D-3-329d7cf4b54b81c68537f5138a8b1ecd"
     },
     {
@@ -672,6 +740,7 @@
       "date_start": "2026-03-11",
       "date_end": "2026-03-11",
       "done": true,
+      "status": null,
       "url": "https://www.notion.so/v2-25-QA-Build-D-8-329d7cf4b54b8101b3a3ddb123b28bc4"
     },
     {
@@ -684,6 +753,7 @@
       "date_start": "2026-03-11",
       "date_end": "2026-03-11",
       "done": true,
+      "status": null,
       "url": "https://www.notion.so/v2-25-What-s-new-PRD-MKT-D-8-329d7cf4b54b8114b23ed3841b71cbd5"
     },
     {
@@ -696,6 +766,7 @@
       "date_start": "2026-03-11",
       "date_end": "2026-03-11",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-25-Product-ID-List-ng-k-VNG-HAEGIN-D-8-329d7cf4b54b8173901cfe5fe2a5ba6f"
     },
     {
@@ -708,6 +779,7 @@
       "date_start": "2026-03-11",
       "date_end": "2026-03-11",
       "done": true,
+      "status": null,
       "url": "https://www.notion.so/v2-25-PPT-HAEGIN-VNG-D-8-329d7cf4b54b81c3b1a7c47ab606c7bb"
     },
     {
@@ -720,6 +792,7 @@
       "date_start": "2026-03-10",
       "date_end": "2026-03-31",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/Gameverse-V-ng-lo-i-329d7cf4b54b81878100c0aaa161ef5d"
     },
     {
@@ -732,6 +805,7 @@
       "date_start": "2026-03-10",
       "date_end": "2026-03-10",
       "done": true,
+      "status": null,
       "url": "https://www.notion.so/v2-25-L-u-REMIND-logo-tu-i-giao-di-n-Couple-329d7cf4b54b816abab5c64abb60f648"
     },
     {
@@ -744,6 +818,7 @@
       "date_start": "2026-03-10",
       "date_end": "2026-03-10",
       "done": true,
+      "status": null,
       "url": "https://www.notion.so/v2-25-ItemID-Action-Key-329d7cf4b54b81e6820bdf0c9db4c691"
     },
     {
@@ -756,6 +831,7 @@
       "date_start": "2026-03-10",
       "date_end": "2026-03-10",
       "done": true,
+      "status": null,
       "url": "https://www.notion.so/v2-25-Sale-Schedule-D-9-329d7cf4b54b81ccb000d6c33c6bf865"
     },
     {
@@ -768,6 +844,7 @@
       "date_start": "2026-03-10",
       "date_end": "2026-03-10",
       "done": true,
+      "status": null,
       "url": "https://www.notion.so/v2-25-What-s-new-PRD-MKT-329d7cf4b54b81d398e4c5b8858551af"
     },
     {
@@ -780,6 +857,7 @@
       "date_start": "2026-03-10",
       "date_end": "2026-03-10",
       "done": true,
+      "status": null,
       "url": "https://www.notion.so/Chu-n-b-SDK-XCode-26-Li-n-h-team-SDK-329d7cf4b54b81f98ad6ed78e6885e88"
     },
     {
@@ -792,6 +870,7 @@
       "date_start": "2026-03-06",
       "date_end": "2026-03-06",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/G-i-Sales-Report-T2-2026-cho-Haegin-329d7cf4b54b81ff90ddd8588d918566"
     },
     {
@@ -804,6 +883,7 @@
       "date_start": "2026-03-03",
       "date_end": "2026-03-17",
       "done": true,
+      "status": null,
       "url": "https://www.notion.so/Event-Elemental-Fantasy-Nh-n-b-i-thi-329d7cf4b54b8160b361fb92f8c0eb07"
     },
     {
@@ -816,6 +896,7 @@
       "date_start": "2026-03-01",
       "date_end": "2026-03-02",
       "done": true,
+      "status": null,
       "url": "https://www.notion.so/Haegin-off-Ng-y-L-p-Qu-c-329d7cf4b54b81bfbbf0e6c8a6080758"
     },
     {
@@ -828,6 +909,7 @@
       "date_start": "2026-02-27",
       "date_end": "2026-02-27",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/G-i-PUM-T1-2026-cho-Haegin-329d7cf4b54b813aa8d4e5f3a3838944"
     },
     {
@@ -840,6 +922,7 @@
       "date_start": "2026-02-26",
       "date_end": "2026-02-26",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/2-24-Mini-Update-329d7cf4b54b812392cafa0e23d72b33"
     },
     {
@@ -852,6 +935,7 @@
       "date_start": "2026-02-19",
       "date_end": "2026-02-22",
       "done": true,
+      "status": null,
       "url": "https://www.notion.so/VNG-off-T-t-m-L-ch-329d7cf4b54b814e9825f5d7198879f7"
     },
     {
@@ -864,6 +948,7 @@
       "date_start": "2026-02-17",
       "date_end": "2026-02-19",
       "done": true,
+      "status": null,
       "url": "https://www.notion.so/H5-Gieo-qu-329d7cf4b54b8173a1f4c7d39ec0f357"
     },
     {
@@ -876,6 +961,7 @@
       "date_start": "2026-02-15",
       "date_end": "2026-02-25",
       "done": true,
+      "status": null,
       "url": "https://www.notion.so/v2-24-Pony-AOS-Webshop-Sale-329d7cf4b54b81b49aa6db48e38847d9"
     },
     {
@@ -888,6 +974,7 @@
       "date_start": "2026-02-14",
       "date_end": "2026-02-18",
       "done": true,
+      "status": null,
       "url": "https://www.notion.so/Haegin-off-T-t-m-L-ch-329d7cf4b54b810da3eec5a165f863be"
     },
     {
@@ -900,6 +987,7 @@
       "date_start": "2026-02-14",
       "date_end": "2026-02-18",
       "done": true,
+      "status": null,
       "url": "https://www.notion.so/VNG-Haegin-off-T-t-m-L-ch-329d7cf4b54b818293f4ea7b3ab4f1b6"
     },
     {
@@ -912,6 +1000,7 @@
       "date_start": "2026-02-06",
       "date_end": "2026-02-06",
       "done": true,
+      "status": null,
       "url": "https://www.notion.so/G-i-Sales-report-T1-2026-cho-Haegin-329d7cf4b54b81f5b2e1f966ebda9746"
     },
     {
@@ -924,6 +1013,7 @@
       "date_start": "2026-02-05",
       "date_end": "2026-02-14",
       "done": true,
+      "status": null,
       "url": "https://www.notion.so/v2-24-Pony-iOS-Exclusive-Sale-329d7cf4b54b81b5a343cc35dea73c74"
     },
     {
@@ -936,6 +1026,7 @@
       "date_start": "2026-02-05",
       "date_end": "2026-02-05",
       "done": true,
+      "status": null,
       "url": "https://www.notion.so/Update-2-24-0-329d7cf4b54b811bbe1fcc53e3a5cc4b"
     },
     {
@@ -948,6 +1039,7 @@
       "date_start": "2026-02-02",
       "date_end": "2026-02-02",
       "done": true,
+      "status": null,
       "url": "https://www.notion.so/v2-24-Image-Source-HAEGIN-PRD-MKT-D-3-329d7cf4b54b81429206d8c85f1e6fc9"
     },
     {
@@ -960,6 +1052,7 @@
       "date_start": "2026-02-02",
       "date_end": "2026-02-02",
       "done": true,
+      "status": null,
       "url": "https://www.notion.so/v2-24-Final-Build-D-3-329d7cf4b54b813a813ed23d26c8957c"
     },
     {
@@ -972,6 +1065,7 @@
       "date_start": "2026-01-31",
       "date_end": "2026-02-21",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/Event-ng-qu-v2-23-329d7cf4b54b819fa83ee5ea765a8422"
     },
     {
@@ -984,6 +1078,7 @@
       "date_start": "2026-01-28",
       "date_end": "2026-01-28",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-24-Product-ID-List-khai-b-o-VNG-HAEGIN-D-9-329d7cf4b54b811d9755d4df4ed91bba"
     },
     {
@@ -996,6 +1091,7 @@
       "date_start": "2026-01-28",
       "date_end": "2026-01-28",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-24-What-s-new-PRD-MKT-D-8-329d7cf4b54b8120a074f2a271b96556"
     },
     {
@@ -1008,6 +1104,7 @@
       "date_start": "2026-01-28",
       "date_end": "2026-01-28",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-24-PPT-HAEGIN-VNG-D-8-329d7cf4b54b81f988d0d4c107001808"
     },
     {
@@ -1020,6 +1117,7 @@
       "date_start": "2026-01-28",
       "date_end": "2026-01-28",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-24-QA-Build-D-8-329d7cf4b54b81b88b60f157e5148cfa"
     },
     {
@@ -1032,6 +1130,7 @@
       "date_start": "2026-01-27",
       "date_end": "2026-01-27",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-24-Sale-Schedule-D-9-329d7cf4b54b814495d3eb25f88c36c2"
     },
     {
@@ -1044,6 +1143,7 @@
       "date_start": "2026-01-27",
       "date_end": "2026-01-27",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-24-What-s-new-PRD-MKT-329d7cf4b54b8165a1b0ddd4ff38c783"
     },
     {
@@ -1056,6 +1156,7 @@
       "date_start": "2026-01-27",
       "date_end": "2026-01-27",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-24-ItemID-Action-Key-329d7cf4b54b81988380e800447bd612"
     },
     {
@@ -1068,6 +1169,7 @@
       "date_start": "2026-01-22",
       "date_end": "2026-01-22",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/2-23-Mini-Update-329d7cf4b54b817c8a4dd5bb64287a98"
     },
     {
@@ -1080,6 +1182,7 @@
       "date_start": "2026-01-20",
       "date_end": "2026-01-20",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/PUM-T12-2025-329d7cf4b54b81898b65df8d111ab09e"
     },
     {
@@ -1092,6 +1195,7 @@
       "date_start": "2026-01-16",
       "date_end": "2026-01-31",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/H5-Play-Daily-329d7cf4b54b81f98f82c539b4758ecd"
     },
     {
@@ -1104,6 +1208,7 @@
       "date_start": "2026-01-14",
       "date_end": "2026-01-15",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/G-i-video-recap-T-t-p-v2-24-329d7cf4b54b81798fb3c7c90757076b"
     },
     {
@@ -1116,6 +1221,7 @@
       "date_start": "2026-01-13",
       "date_end": "2026-01-13",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/Spring-Flower-C-p-th-ng-329d7cf4b54b819ea6a7f045c467c6cc"
     },
     {
@@ -1128,6 +1234,7 @@
       "date_start": "2026-01-12",
       "date_end": "2026-01-12",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/Video-recap-2025-v2-24-329d7cf4b54b816f89a8e672fc7d9690"
     },
     {
@@ -1140,6 +1247,7 @@
       "date_start": "2026-01-08",
       "date_end": "2026-01-08",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/Update-2-23-0-329d7cf4b54b8147acade2a623d31c71"
     },
     {
@@ -1152,6 +1260,7 @@
       "date_start": "2026-01-08",
       "date_end": "2026-01-08",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/Spring-Flower-C-ng-b-gi-i-329d7cf4b54b81039789c9e41cdedc81"
     },
     {
@@ -1164,6 +1273,7 @@
       "date_start": "2026-01-07",
       "date_end": "2026-01-07",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-23-Chuy-n-server-live-D-1-329d7cf4b54b81199ab2dbcce44bb50d"
     },
     {
@@ -1176,6 +1286,7 @@
       "date_start": "2026-01-07",
       "date_end": "2026-01-07",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/V2-23-Share-k-t-qu-submit-D-1-329d7cf4b54b8146921bc4a6fa3ab165"
     },
     {
@@ -1188,6 +1299,7 @@
       "date_start": "2026-01-07",
       "date_end": "2026-01-07",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/Sales-Report-T12-2025-329d7cf4b54b81698652f2897c9f4ee6"
     },
     {
@@ -1200,6 +1312,7 @@
       "date_start": "2026-01-06",
       "date_end": "2026-01-06",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-23-VNG-submit-iOS-AOS-D-2-329d7cf4b54b814c978be9aa12f7d2b3"
     },
     {
@@ -1212,6 +1325,7 @@
       "date_start": "2026-01-05",
       "date_end": "2026-01-05",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-23-Submit-iOS-AOS-HAEGIN-D-3-329d7cf4b54b815c90b9dffc14ad9b5d"
     },
     {
@@ -1224,6 +1338,7 @@
       "date_start": "2026-01-05",
       "date_end": "2026-01-05",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-23-Image-Source-HAEGIN-PRD-MKT-D-3-329d7cf4b54b8162ae23ffe107bd5a13"
     },
     {
@@ -1236,6 +1351,7 @@
       "date_start": "2026-01-05",
       "date_end": "2026-01-05",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/Artwork-Pony-g-i-Apple-329d7cf4b54b812ea4d3e7e99512b646"
     },
     {
@@ -1248,6 +1364,7 @@
       "date_start": "2026-01-05",
       "date_end": "2026-01-05",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-23-Final-build-D-3-329d7cf4b54b81f9a502cf1146361f48"
     },
     {
@@ -1260,6 +1377,7 @@
       "date_start": "2026-01-01",
       "date_end": "2026-01-02",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/VNG-off-T-t-D-ng-L-ch-329d7cf4b54b8196b186f44cf8d38027"
     },
     {
@@ -1272,6 +1390,7 @@
       "date_start": "2025-12-31",
       "date_end": "2025-12-31",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-23-QA-Build-D-8-329d7cf4b54b81fcb006e540bfd0746b"
     },
     {
@@ -1284,6 +1403,7 @@
       "date_start": "2025-12-31",
       "date_end": "2026-01-01",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/Haegin-off-t-13-00-chi-u-31-12-329d7cf4b54b817fb84cca9967bf1e44"
     },
     {
@@ -1296,6 +1416,7 @@
       "date_start": "2025-12-31",
       "date_end": "2025-12-31",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/Public-code-Tri-n-to-n-server-16h-329d7cf4b54b8102b190d66019593fa0"
     },
     {
@@ -1308,6 +1429,7 @@
       "date_start": "2025-12-31",
       "date_end": "2025-12-31",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-23-PPT-HAEGIN-VNG-D-8-329d7cf4b54b81689a75de3ca7ce76aa"
     },
     {
@@ -1320,6 +1442,7 @@
       "date_start": "2025-12-30",
       "date_end": "2025-12-30",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-23-What-s-new-PRD-MKT-D-9-329d7cf4b54b8116842dce71fa4d0021"
     },
     {
@@ -1332,6 +1455,7 @@
       "date_start": "2025-12-30",
       "date_end": "2025-12-30",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-23-Product-ID-List-khai-b-o-VNG-HAEGIN-D-9-329d7cf4b54b8162b76dc5397dadd23c"
     },
     {
@@ -1344,6 +1468,7 @@
       "date_start": "2025-12-30",
       "date_end": "2025-12-30",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-23-Sale-Schedule-PRD-MKT-D-9-329d7cf4b54b810a88fdd2f1a1b2b43b"
     },
     {
@@ -1356,6 +1481,7 @@
       "date_start": "2025-12-30",
       "date_end": "2025-12-30",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/G-i-SDK-In-App-message-p-v-o-v2-24-0-VNG-HAEGIN-329d7cf4b54b817a8b46f0e8a46f0631"
     },
     {
@@ -1368,6 +1494,7 @@
       "date_start": "2025-12-29",
       "date_end": "2025-12-29",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-23-ItemID-Action-Key-329d7cf4b54b813392f0f267a3000274"
     },
     {
@@ -1380,6 +1507,7 @@
       "date_start": "2025-12-29",
       "date_end": "2025-12-29",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-23-What-s-new-PRD-MKT-329d7cf4b54b81a2abaaf2789dc73206"
     },
     {
@@ -1392,6 +1520,7 @@
       "date_start": "2025-12-29",
       "date_end": "2025-12-29",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/PSD-coupon-tri-n-to-n-server-329d7cf4b54b81e188c5cf4c87c9e6dd"
     },
     {
@@ -1404,6 +1533,7 @@
       "date_start": "2025-12-29",
       "date_end": "2025-12-29",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/v2-23-Sale-Schedule-D-10-329d7cf4b54b81cbb45ee440a120556a"
     },
     {
@@ -1416,6 +1546,7 @@
       "date_start": "2025-12-26",
       "date_end": "2025-12-30",
       "done": false,
+      "status": null,
       "url": "https://www.notion.so/N-ng-c-p-Webshop-329d7cf4b54b81a8ae57eb026d9a9cb6"
     },
     {
@@ -1427,7 +1558,8 @@
       "version": "BẢO TRÌ v2.22.2",
       "date_start": "2025-12-26",
       "date_end": "2025-12-26",
-      "done": false,
+      "done": true,
+      "status": null,
       "url": "https://www.notion.so/Update-v2-22-2-329d7cf4b54b81b1809aced5c8f11957"
     },
     {
@@ -1439,7 +1571,8 @@
       "version": "H5 EVENT v2.22.2",
       "date_start": "2025-12-25",
       "date_end": "2025-12-25",
-      "done": false,
+      "done": true,
+      "status": null,
       "url": "https://www.notion.so/Remind-i-t-c-thay-link-H5-tr-n-QA-v2-22-2-329d7cf4b54b81bea701d83cf1bc6b11"
     },
     {
@@ -1451,7 +1584,8 @@
       "version": "H5 EVENT v2.22",
       "date_start": "2025-12-25",
       "date_end": "2026-01-02",
-      "done": false,
+      "done": true,
+      "status": null,
       "url": "https://www.notion.so/Ti-n-h-nh-kh-o-s-t-H5-v2-22-329d7cf4b54b81849da4de2ca7ab1a2b"
     },
     {
@@ -1463,7 +1597,8 @@
       "version": "",
       "date_start": "2025-12-19",
       "date_end": "2025-12-19",
-      "done": false,
+      "done": true,
+      "status": null,
       "url": "https://www.notion.so/G-i-l-i-danh-s-ch-Spring-and-Flower-tuy-n-ch-n-329d7cf4b54b818ea8b0e31a2a16bde0"
     },
     {
@@ -1475,7 +1610,8 @@
       "version": "BUILD v2.22.2",
       "date_start": "2025-12-18",
       "date_end": "2025-12-18",
-      "done": false,
+      "done": true,
+      "status": null,
       "url": "https://www.notion.so/v2-22-2-Submit-D-1-329d7cf4b54b81d391c5e2642a739637"
     },
     {
@@ -1487,7 +1623,8 @@
       "version": "BUILD v2.22.2",
       "date_start": "2025-12-17",
       "date_end": "2025-12-17",
-      "done": false,
+      "done": true,
+      "status": null,
       "url": "https://www.notion.so/v2-22-2-Build-D-2-329d7cf4b54b81f58890df4b36a8ac17"
     }
   ]
