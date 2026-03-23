@@ -498,18 +498,15 @@ function nav(page) {
 }
 
 function renderPage() {
-  if (state.tasks.length === 0 && !state.error) {
-    renderEmpty();
-    return;
-  }
+  if (state.page === "config") { renderConfig(); return; }
+  if (state.tasks.length === 0 && !state.error) { renderEmpty(); return; }
   if (state.error) { return; }
   switch (state.page) {
-    case 'overview':  renderOverview(); break;
-    case 'workload':  renderWorkload(); break;
-    case 'alerts':    renderAlerts(); break;
-    case 'kanban':    renderKanban(); break;
-    case 'table':     renderTable(); break;
-    case 'config':    renderConfig(); break;
+    case "overview":  renderOverview(); break;
+    case "workload":  renderWorkload(); break;
+    case "alerts":    renderAlerts(); break;
+    case "kanban":    renderKanban(); break;
+    case "table":     renderTable(); break;
     default:          renderOverview();
   }
 }
