@@ -1,6 +1,6 @@
 {
-  "synced_at": "2026-03-24T06:55:30.522Z",
-  "count": 127,
+  "synced_at": "2026-03-24T07:47:54.160Z",
+  "count": 128,
   "tasks": [
     {
       "id": "329d7cf4-b54b-81b4-945b-c4ab58b56722",
@@ -717,6 +717,20 @@
       "url": "https://www.notion.so/Meeting-v-i-Haegin-32cd7cf4b54b817cb902cc7189178dc5"
     },
     {
+      "id": "32dd7cf4-b54b-818a-8fa0-f4e75c4906d4",
+      "name": "Đánh giá phương án xử lý case thu hồi nước phép",
+      "type": "CHUẨN BỊ",
+      "company": "",
+      "pic": "Khoa, Lisa",
+      "version": "",
+      "date_start": "2026-03-24",
+      "date_end": "2026-03-26",
+      "done": false,
+      "status": "To Do",
+      "priority": "Medium",
+      "url": "https://www.notion.so/nh-gi-ph-ng-n-x-l-case-thu-h-i-n-c-ph-p-32dd7cf4b54b818a8fa0f4e75c4906d4"
+    },
+    {
       "id": "32cd7cf4-b54b-812f-b893-d1e8a5a5af53",
       "name": "Xin nhạc Dragon Village",
       "type": "CHUẨN BỊ",
@@ -767,7 +781,7 @@
       "version": "",
       "date_start": "2026-03-19",
       "date_end": "2026-03-19",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/Update-2-25-0-329d7cf4b54b8100aaadd975de9a3f2c"
@@ -781,7 +795,7 @@
       "version": "",
       "date_start": "2026-03-16",
       "date_end": "2026-03-16",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/G-i-PUM-T2-2026-cho-Haegin-329d7cf4b54b813c901dd9e2275520d9"
@@ -795,7 +809,7 @@
       "version": "BUILD v2.25",
       "date_start": "2026-03-16",
       "date_end": "2026-03-16",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/v2-25-Final-Build-D-3-329d7cf4b54b8134a72dd8ae974d9727"
@@ -809,7 +823,7 @@
       "version": "CHUẨN BỊ v2.25",
       "date_start": "2026-03-16",
       "date_end": "2026-03-16",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/v2-25-Image-Source-HAEGIN-PRD-MKT-D-3-329d7cf4b54b81c68537f5138a8b1ecd"
@@ -851,7 +865,7 @@
       "version": "CHUẨN BỊ v2.25",
       "date_start": "2026-03-11",
       "date_end": "2026-03-11",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/v2-25-Product-ID-List-ng-k-VNG-HAEGIN-D-8-329d7cf4b54b8173901cfe5fe2a5ba6f"
@@ -879,7 +893,7 @@
       "version": "",
       "date_start": "2026-03-10",
       "date_end": "2026-03-31",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/Gameverse-V-ng-lo-i-329d7cf4b54b81878100c0aaa161ef5d"
@@ -963,7 +977,7 @@
       "version": "",
       "date_start": "2026-03-06",
       "date_end": "2026-03-06",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/G-i-Sales-Report-T2-2026-cho-Haegin-329d7cf4b54b81ff90ddd8588d918566"
@@ -1173,7 +1187,7 @@
       "version": "MARKETING v2.23",
       "date_start": "2026-01-31",
       "date_end": "2026-02-21",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/Event-ng-qu-v2-23-329d7cf4b54b819fa83ee5ea765a8422"
@@ -1187,7 +1201,7 @@
       "version": "CHUẨN BỊ v2.24",
       "date_start": "2026-01-28",
       "date_end": "2026-01-28",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/v2-24-Product-ID-List-khai-b-o-VNG-HAEGIN-D-9-329d7cf4b54b811d9755d4df4ed91bba"
@@ -1201,7 +1215,7 @@
       "version": "CHUẨN BỊ v2.24",
       "date_start": "2026-01-28",
       "date_end": "2026-01-28",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/v2-24-What-s-new-PRD-MKT-D-8-329d7cf4b54b8120a074f2a271b96556"
@@ -1215,7 +1229,7 @@
       "version": "CHUẨN BỊ v2.24",
       "date_start": "2026-01-28",
       "date_end": "2026-01-28",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/v2-24-PPT-HAEGIN-VNG-D-8-329d7cf4b54b81f988d0d4c107001808"
@@ -1229,7 +1243,7 @@
       "version": "BUILD v2.24",
       "date_start": "2026-01-28",
       "date_end": "2026-01-28",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/v2-24-QA-Build-D-8-329d7cf4b54b81b88b60f157e5148cfa"
@@ -1243,7 +1257,7 @@
       "version": "CHUẨN BỊ v2.24",
       "date_start": "2026-01-27",
       "date_end": "2026-01-27",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/v2-24-Sale-Schedule-D-9-329d7cf4b54b814495d3eb25f88c36c2"
@@ -1257,7 +1271,7 @@
       "version": "CHUẨN BỊ v2.24",
       "date_start": "2026-01-27",
       "date_end": "2026-01-27",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/v2-24-What-s-new-PRD-MKT-329d7cf4b54b8165a1b0ddd4ff38c783"
@@ -1271,7 +1285,7 @@
       "version": "CHUẨN BỊ v2.24",
       "date_start": "2026-01-27",
       "date_end": "2026-01-27",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/v2-24-ItemID-Action-Key-329d7cf4b54b81988380e800447bd612"
@@ -1285,7 +1299,7 @@
       "version": "",
       "date_start": "2026-01-22",
       "date_end": "2026-01-22",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/2-23-Mini-Update-329d7cf4b54b817c8a4dd5bb64287a98"
@@ -1299,7 +1313,7 @@
       "version": "",
       "date_start": "2026-01-20",
       "date_end": "2026-01-20",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/PUM-T12-2025-329d7cf4b54b81898b65df8d111ab09e"
@@ -1313,7 +1327,7 @@
       "version": "",
       "date_start": "2026-01-16",
       "date_end": "2026-01-31",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/H5-Play-Daily-329d7cf4b54b81f98f82c539b4758ecd"
@@ -1327,7 +1341,7 @@
       "version": "BUILD v2.24",
       "date_start": "2026-01-14",
       "date_end": "2026-01-15",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/G-i-video-recap-T-t-p-v2-24-329d7cf4b54b81798fb3c7c90757076b"
@@ -1341,7 +1355,7 @@
       "version": "",
       "date_start": "2026-01-13",
       "date_end": "2026-01-13",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/Spring-Flower-C-p-th-ng-329d7cf4b54b819ea6a7f045c467c6cc"
@@ -1355,7 +1369,7 @@
       "version": "MARKETING v2.24",
       "date_start": "2026-01-12",
       "date_end": "2026-01-12",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/Video-recap-2025-v2-24-329d7cf4b54b816f89a8e672fc7d9690"
@@ -1369,7 +1383,7 @@
       "version": "",
       "date_start": "2026-01-08",
       "date_end": "2026-01-08",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/Update-2-23-0-329d7cf4b54b8147acade2a623d31c71"
@@ -1383,7 +1397,7 @@
       "version": "",
       "date_start": "2026-01-08",
       "date_end": "2026-01-08",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/Spring-Flower-C-ng-b-gi-i-329d7cf4b54b81039789c9e41cdedc81"
@@ -1397,7 +1411,7 @@
       "version": "BUILD v2.23",
       "date_start": "2026-01-07",
       "date_end": "2026-01-07",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/v2-23-Chuy-n-server-live-D-1-329d7cf4b54b81199ab2dbcce44bb50d"
@@ -1411,7 +1425,7 @@
       "version": "BUILD V2.23",
       "date_start": "2026-01-07",
       "date_end": "2026-01-07",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/V2-23-Share-k-t-qu-submit-D-1-329d7cf4b54b8146921bc4a6fa3ab165"
@@ -1425,7 +1439,7 @@
       "version": "",
       "date_start": "2026-01-07",
       "date_end": "2026-01-07",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/Sales-Report-T12-2025-329d7cf4b54b81698652f2897c9f4ee6"
@@ -1439,7 +1453,7 @@
       "version": "BUILD v2.23",
       "date_start": "2026-01-06",
       "date_end": "2026-01-06",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/v2-23-VNG-submit-iOS-AOS-D-2-329d7cf4b54b814c978be9aa12f7d2b3"
@@ -1453,7 +1467,7 @@
       "version": "BUILD v2.23",
       "date_start": "2026-01-05",
       "date_end": "2026-01-05",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/v2-23-Submit-iOS-AOS-HAEGIN-D-3-329d7cf4b54b815c90b9dffc14ad9b5d"
@@ -1467,7 +1481,7 @@
       "version": "CHUẨN BỊ v2.23",
       "date_start": "2026-01-05",
       "date_end": "2026-01-05",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/v2-23-Image-Source-HAEGIN-PRD-MKT-D-3-329d7cf4b54b8162ae23ffe107bd5a13"
@@ -1481,7 +1495,7 @@
       "version": "",
       "date_start": "2026-01-05",
       "date_end": "2026-01-05",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/Artwork-Pony-g-i-Apple-329d7cf4b54b812ea4d3e7e99512b646"
@@ -1495,7 +1509,7 @@
       "version": "BUILD v2.23",
       "date_start": "2026-01-05",
       "date_end": "2026-01-05",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/v2-23-Final-build-D-3-329d7cf4b54b81f9a502cf1146361f48"
@@ -1509,7 +1523,7 @@
       "version": "",
       "date_start": "2026-01-01",
       "date_end": "2026-01-02",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/VNG-off-T-t-D-ng-L-ch-329d7cf4b54b8196b186f44cf8d38027"
@@ -1523,7 +1537,7 @@
       "version": "BUILD v2.23",
       "date_start": "2025-12-31",
       "date_end": "2025-12-31",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/v2-23-QA-Build-D-8-329d7cf4b54b81fcb006e540bfd0746b"
@@ -1537,7 +1551,7 @@
       "version": "",
       "date_start": "2025-12-31",
       "date_end": "2026-01-01",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/Haegin-off-t-13-00-chi-u-31-12-329d7cf4b54b817fb84cca9967bf1e44"
@@ -1551,7 +1565,7 @@
       "version": "",
       "date_start": "2025-12-31",
       "date_end": "2025-12-31",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/Public-code-Tri-n-to-n-server-16h-329d7cf4b54b8102b190d66019593fa0"
@@ -1565,7 +1579,7 @@
       "version": "CHUẨN BỊ v2.23",
       "date_start": "2025-12-31",
       "date_end": "2025-12-31",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/v2-23-PPT-HAEGIN-VNG-D-8-329d7cf4b54b81689a75de3ca7ce76aa"
@@ -1579,7 +1593,7 @@
       "version": "CHUẨN BỊ v2.23",
       "date_start": "2025-12-30",
       "date_end": "2025-12-30",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/v2-23-What-s-new-PRD-MKT-D-9-329d7cf4b54b8116842dce71fa4d0021"
@@ -1593,7 +1607,7 @@
       "version": "CHUẨN BỊ v2.23",
       "date_start": "2025-12-30",
       "date_end": "2025-12-30",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/v2-23-Product-ID-List-khai-b-o-VNG-HAEGIN-D-9-329d7cf4b54b8162b76dc5397dadd23c"
@@ -1607,7 +1621,7 @@
       "version": "CHUẨN BỊ v2.23",
       "date_start": "2025-12-30",
       "date_end": "2025-12-30",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/v2-23-Sale-Schedule-PRD-MKT-D-9-329d7cf4b54b810a88fdd2f1a1b2b43b"
@@ -1621,7 +1635,7 @@
       "version": "TECH v2.24.0",
       "date_start": "2025-12-30",
       "date_end": "2025-12-30",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/G-i-SDK-In-App-message-p-v-o-v2-24-0-VNG-HAEGIN-329d7cf4b54b817a8b46f0e8a46f0631"
@@ -1635,7 +1649,7 @@
       "version": "CHUẨN BỊ v2.23",
       "date_start": "2025-12-29",
       "date_end": "2025-12-29",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/v2-23-ItemID-Action-Key-329d7cf4b54b813392f0f267a3000274"
@@ -1649,7 +1663,7 @@
       "version": "CHUẨN BỊ v2.23",
       "date_start": "2025-12-29",
       "date_end": "2025-12-29",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/v2-23-What-s-new-PRD-MKT-329d7cf4b54b81a2abaaf2789dc73206"
@@ -1663,7 +1677,7 @@
       "version": "",
       "date_start": "2025-12-29",
       "date_end": "2025-12-29",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/PSD-coupon-tri-n-to-n-server-329d7cf4b54b81e188c5cf4c87c9e6dd"
@@ -1677,7 +1691,7 @@
       "version": "CHUẨN BỊ v2.23",
       "date_start": "2025-12-29",
       "date_end": "2025-12-29",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/v2-23-Sale-Schedule-D-10-329d7cf4b54b81cbb45ee440a120556a"
@@ -1691,7 +1705,7 @@
       "version": "",
       "date_start": "2025-12-26",
       "date_end": "2025-12-30",
-      "done": false,
+      "done": true,
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/N-ng-c-p-Webshop-329d7cf4b54b81a8ae57eb026d9a9cb6"
