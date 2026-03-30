@@ -1,5 +1,5 @@
 {
-  "synced_at": "2026-03-30T07:18:03.894Z",
+  "synced_at": "2026-03-30T09:04:33.268Z",
   "count": 128,
   "tasks": [
     {
@@ -698,7 +698,7 @@
       "date_start": "2026-03-27",
       "date_end": "2026-03-28",
       "done": false,
-      "status": "In Progress",
+      "status": "Done",
       "priority": null,
       "url": "https://www.notion.so/i-n-v-i-Haegin-32cd7cf4b54b81a09740cded3b45bf0d"
     },
@@ -712,7 +712,7 @@
       "date_start": "2026-03-26",
       "date_end": "2026-03-27",
       "done": false,
-      "status": "In Progress",
+      "status": "Done",
       "priority": "Urgent",
       "url": "https://www.notion.so/Meeting-v-i-Haegin-32cd7cf4b54b817cb902cc7189178dc5"
     },
