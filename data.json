@@ -1,6 +1,6 @@
 {
-  "synced_at": "2026-04-01T01:52:18.374Z",
-  "count": 128,
+  "synced_at": "2026-04-01T04:43:03.935Z",
+  "count": 129,
   "tasks": [
     {
       "id": "329d7cf4-b54b-81b4-945b-c4ab58b56722",
@@ -659,6 +659,20 @@
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/task-t-ng-performance-PTG-329d7cf4b54b819da3f6ca4ba239f065"
+    },
+    {
+      "id": "335d7cf4-b54b-8172-b7d4-eb686bd11777",
+      "name": "Kiểm tra fix text itemId 21010033 sau bảo trì thứ 5",
+      "type": "CHUẨN BỊ",
+      "company": "",
+      "pic": "Phượng",
+      "version": "",
+      "date_start": "2026-04-02",
+      "date_end": "2026-04-02",
+      "done": false,
+      "status": "To Do",
+      "priority": "Medium",
+      "url": "https://www.notion.so/Ki-m-tra-fix-text-itemId-21010033-sau-b-o-tr-th-5-335d7cf4b54b8172b7d4eb686bd11777"
     },
     {
       "id": "329d7cf4-b54b-81cd-b1a6-c94bb89524a1",
