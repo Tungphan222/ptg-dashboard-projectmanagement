@@ -1,6 +1,6 @@
 {
-  "synced_at": "2026-04-08T10:50:35.583Z",
-  "count": 129,
+  "synced_at": "2026-04-08T13:04:24.416Z",
+  "count": 130,
   "tasks": [
     {
       "id": "329d7cf4-b54b-81b4-945b-c4ab58b56722",
@@ -463,6 +463,20 @@
       "status": null,
       "priority": null,
       "url": "https://www.notion.so/VNG-off-Team-Building-GS9-329d7cf4b54b8159b9f3d8d6d904b632"
+    },
+    {
+      "id": "33cd7cf4-b54b-8194-b617-c9722f2c423d",
+      "name": "Task của anh Tùng",
+      "type": "CHUẨN BỊ",
+      "company": "",
+      "pic": "Lisa",
+      "version": "",
+      "date_start": "2026-04-16",
+      "date_end": "2026-04-16",
+      "done": false,
+      "status": "Progress",
+      "priority": "High",
+      "url": "https://www.notion.so/Task-c-a-anh-T-ng-33cd7cf4b54b8194b617c9722f2c423d"
     },
     {
       "id": "329d7cf4-b54b-81c4-86ac-ebba0559f100",
